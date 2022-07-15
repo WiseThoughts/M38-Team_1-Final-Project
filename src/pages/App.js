@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
-
+import Home from "./home";
+import Profile from "./profile"
 
 
 import '../style/App.css';
@@ -14,10 +14,7 @@ function App() {
 
 
     <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/feed" element={<Feed />} />
+        <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
     </Routes>
 
