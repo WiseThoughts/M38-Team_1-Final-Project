@@ -10,9 +10,19 @@ function App() {
 
 
   return (
-    <div>
+  <div>
 
-    </div>
+
+    <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/messages" element={<Messages />} />
+        <Route path="/feed" element={<Feed />} />
+        <Route path="/profile" element={<Profile />} />
+    </Routes>
+
+
+  </div>
   );
 }
 
