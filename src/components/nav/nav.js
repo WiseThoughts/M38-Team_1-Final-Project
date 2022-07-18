@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Wrapper, NavbarItems,  } from "../style/nav.styled";
-import "../style/nav.css"
+import { Wrapper, NavbarItems,  } from "./nav.styled";
+import "./nav.css"
 
 
 const Nav = () => {

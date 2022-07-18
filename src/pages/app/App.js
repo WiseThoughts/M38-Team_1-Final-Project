@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from "./home";
-import Profile from "./profile"
+import Home from "../home/home";
+import Profile from "../profile/profile"
 
 
-import '../style/App.css';
+import './App.css';
 
 function App() {
 

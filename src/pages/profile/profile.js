@@ -1,4 +1,4 @@
-import Nav from "../components/nav.js"
+import Nav from "../../components/nav/nav"
 
 
 const Profile = () => {
