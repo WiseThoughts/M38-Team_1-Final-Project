@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Wrapper, NavbarItems,  } from "../style/nav.styled";
-import "../style/nav.css"
+import { Wrapper, NavbarItems,  } from "./nav.styled";
+import "./nav.css"
 
 
 const Nav = () => {
@@ -10,6 +10,7 @@ const Nav = () => {
     <Wrapper>
         <Link className="navBarLinks" to="/"><NavbarItems>Home</NavbarItems></Link>
         <Link className="navBarLinks" to="/profile"><NavbarItems>Profile</NavbarItems></Link>
+        <Link className="navBarLinks" to="/store"><NavbarItems>Store</NavbarItems></Link>
     </Wrapper>
 );
 };
