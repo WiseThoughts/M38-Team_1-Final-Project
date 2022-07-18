@@ -3,3 +3,12 @@
     background-color: transparent;
     padding: 44.5px;
 }
+
+.btnMid{
+    display: flex;
+    justify-content: center;
+}
+
+.formSpaces{
+    padding: 2px;
+}

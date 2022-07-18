@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import { Form, InputLogin  } from "./login.styled"
 import Nav from "../nav/nav"
 import "./login.css"
 
@@ -23,22 +24,32 @@ const Login = ({user}) => {
 
 
     <div>
+
     {user && <Navigate to="/store" />}
-        <form>
-        <input onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-        {!logBool && <input onChange={(e) => setName(e.target.value)} placeholder="Name" />}
-        {!logBool && <input id="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />}
-        <input onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password"/>
-        {!logBool && <input onChange={(e) => setAddress(e.target.value)} placeholder="Address" />}
+    <div>
+        <Form>
+        <InputLogin onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
+        <div className="formSpaces" />
+        {!logBool && <InputLogin onChange={(e) => setName(e.target.value)} placeholder="Name" />}
+        <div className="formSpaces" />
+        {!logBool && <InputLogin id="email" onChange={(e) => setEmail(e.target.value)} placeholder="Email" />}
+        <div className="formSpaces" />
+        <InputLogin onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password"/>
+        <div className="formSpaces" />
+        {!logBool && <InputLogin onChange={(e) => setAddress(e.target.value)} placeholder="Address" />}
+        <div className="formSpaces" />
         <button type="submit">{logBool ? "Log In" : "Sign Up"}</button>
-        </form>
-        <div/>
+        <div className="formSpaces" />
+        </Form>
+        <div className="btnMid">
         <button onClick={() => setLogBool(!logBool)}>
         {logBool ? "Don't " : "Already "} have an account?
         </button>
-
         </div>
     </div>
+    
+    </div>
+</div>
 );
 };
 

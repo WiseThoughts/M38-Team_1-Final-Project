@@ -1,18 +1,18 @@
 # Collaborators 
 UX/Design:\
--Benny Nebreda (https://github.com/WiseThoughts/)\
+-Benny Nebreda (https://github.com/WiseThoughts/) \
 
 Front-End:\
--Oliver Thorburn (https://github.com/burn-Thor)\
--Safwan Arif (https://github.com/SafwanArif)\
--Alex Kamara (https://github.com/Alex-kamara)\
--Waiz Ahmed (https://github.com/Waiz86)\
+-Oliver Thorburn (https://github.com/burn-Thor) \
+-Safwan Arif (https://github.com/SafwanArif) \
+-Alex Kamara (https://github.com/Alex-kamara) \
+-Waiz Ahmed (https://github.com/Waiz86) \
 
 Back-End:\
--Edward Valentine (https://github.com/Eddieval2022)\
--Josh Foulkes (https://github.com/EvoFox)\
--Keshia Collins (https://github.com/Keshia-90)\
--Elizabeth Olugbodi (https://github.com/ElizabethOlugbodi)\
+-Edward Valentine (https://github.com/Eddieval2022) \
+-Josh Foulkes (https://github.com/EvoFox) \
+-Keshia Collins (https://github.com/Keshia-90) \
+-Elizabeth Olugbodi (https://github.com/ElizabethOlugbodi) \
 
 
 ## Getting Started with Create React App
