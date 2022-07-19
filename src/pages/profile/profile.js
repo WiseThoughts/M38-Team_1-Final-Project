@@ -1,7 +1,7 @@
 import Nav from "../../components/nav/nav"
 
 
-const Profile = () => {
+const Profile = ({profilePic,}) => {
 
 
 return (<div>
