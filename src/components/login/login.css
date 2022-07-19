@@ -16,10 +16,6 @@
     display: flex;
     justify-content: center;
 }
-.black{
-    background: black;
-    height: max-content;
-}
 
 .formSpaces{
     padding: 2px;
