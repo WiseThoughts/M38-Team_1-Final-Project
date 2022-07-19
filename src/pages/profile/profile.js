@@ -14,7 +14,9 @@ return (<div>
     <div>
         <h1>Profile</h1>
     </div>
-
+    <div>
+    <img src={profilePic} alt="users profile pic" />
+    </div>
 
 
     </div>
