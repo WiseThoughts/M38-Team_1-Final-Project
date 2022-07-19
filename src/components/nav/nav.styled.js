@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: #82008f;
+    background-color: black;
     padding: 30px;
     width: 100%;
     position: fixed;
@@ -15,7 +15,10 @@ export const NavbarItems = styled.a`
     margin-right: 25px;
     color: white;
     &:hover {
-        opacity: 0.5;
         cursor: pointer;
+        background: white;
+        color: black;
+        padding: 20px;
+        border: 2px solid grey;
     }
 `;

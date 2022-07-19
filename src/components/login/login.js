@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { Form, InputLogin  } from "./login.styled"
+import { Form, InputLogin, LoginBtn, FormBox, FormTitle, FormOuter } from "./login.styled"
 import Nav from "../nav/nav"
 import "./login.css"
 
@@ -38,8 +38,11 @@ const submitLogIn = async (e) => {
     <div>
 
     {user && <Navigate to="/store" />}
-    <div>
+    <div className="backgroundLogin">
+        <FormOuter>
+        <FormBox>
         <Form onSubmit={logBool ? submitLogIn : submitSignUp}>
+        <FormTitle>{!logBool ? "Sign Up" : "Log In"}</FormTitle>
         <InputLogin onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
         <div className="formSpaces" />
         {!logBool && <InputLogin onChange={(e) => setName(e.target.value)} placeholder="Name" />}
@@ -48,14 +51,17 @@ const submitLogIn = async (e) => {
         <div className="formSpaces" />
         <InputLogin onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password"/>
         <div className="formSpaces" />
-        <button type="submit">{logBool ? "Log In" : "Sign Up"}</button>
+        <LoginBtn type="submit">{logBool ? "Log In" : "Sign Up"}</LoginBtn>
         <div className="formSpaces" />
         </Form>
         <div className="btnMid">
-        <button onClick={() => setLogBool(!logBool)}>
+        <LoginBtn onClick={() => setLogBool(!logBool)}>
         {logBool ? "Don't " : "Already "} have an account?
-        </button>
+        </LoginBtn>
         </div>
+        <div className="black" />
+        </FormBox>
+        </FormOuter>
     </div>
     
     </div>

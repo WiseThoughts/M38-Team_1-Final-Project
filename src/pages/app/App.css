@@ -1,11 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100;200;400;600&family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap');
+
+::-webkit-input-placeholder {color: rgba(255, 255, 255, 0.5); 
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    font-family: 'Nunito Sans', sans-serif; 
+} 
+::-moz-placeholder { color: rgba(255, 255, 255, 0.5); 
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+} 
+:-ms-input-placeholder { color: rgba(255, 255, 255, 0.5); 
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+} 
+:-moz-placeholder {color: rgba(255, 255, 255, 0.5); 
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+} 
+
+
 body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-::-webkit-input-placeholder {color: white;} 
-::-moz-placeholder { color: white;} 
-:-ms-input-placeholder { color: white;} 
-:-moz-placeholder {color: white;} 
 
