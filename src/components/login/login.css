@@ -1,14 +1,27 @@
+.backgroundLogin{
+    background-image: linear-gradient(75deg,
+    rgba(0,0,0, 0.6),rgba(0,0,0, 0.7),
+    transparent), url("../images/interior-large-distribution-warehouse-with-shelves-stacked-with-palettes-goods-ready-market.jpg");
+    background-size: cover;
+    height: 90.9vh;
+}
+
 
 .spacer{
     background-color: transparent;
-    padding: 44.5px;
+    padding: 44px;
 }
 
 .btnMid{
     display: flex;
     justify-content: center;
 }
+.black{
+    background: black;
+    height: max-content;
+}
 
 .formSpaces{
     padding: 2px;
 }
+
