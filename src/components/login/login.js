@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { Form, InputLogin, LoginBtn, FormBox, FormTitle, FormOuter } from "./login.styled"
+import { Form, InputLogin, LoginBtn, FormBox, FormTitle, FormOuter, AccountBtn, } from "./login.styled"
 import Nav from "../nav/nav"
 import "./login.css"
 
@@ -55,9 +55,9 @@ const submitLogIn = async (e) => {
         <div className="formSpaces" />
         </Form>
         <div className="btnMid">
-        <LoginBtn onClick={() => setLogBool(!logBool)}>
+        <AccountBtn onClick={() => setLogBool(!logBool)}>
         {logBool ? "Don't " : "Already "} have an account?
-        </LoginBtn>
+        </AccountBtn>
         </div>
         <div className="black" />
         </FormBox>

@@ -29,14 +29,29 @@ export const InputLogin = styled.input`
     &:hover {
         background: white;
         border: 2px solid red;
-        ::-webkit-input-placeholder {color: black;} 
-        ::-moz-placeholder { color: black;} 
-        :-ms-input-placeholder { color: black;} 
-        :-moz-placeholder {color: black;} 
+        ::-webkit-input-placeholder {color: rgba(0,0,0,0.7);} 
+        ::-moz-placeholder { color: rgba(0,0,0,0.7);} 
+        :-ms-input-placeholder { color: rgba(0,0,0,0.7);} 
+        :-moz-placeholder {color: rgba(0,0,0,0.7);} 
     }
 `;
 
 export const LoginBtn = styled.button`
+    background: black;
+    color: white;
+    font-size: 30px;
+    width: 250px;
+    height: 40px;
+    border: 2px solid white;
+    &:hover {
+        cursor: pointer;
+        background: white;
+        color: black;
+        border: 2px solid red;
+    }
+`
+
+export const AccountBtn = styled.button`
     background: black;
     color: white;
     font-size: 20px;
@@ -51,6 +66,7 @@ export const LoginBtn = styled.button`
     }
 `
 
+
 export const FormBox = styled.div`
     display: flex;
     justify-content: center;
@@ -60,7 +76,7 @@ export const FormBox = styled.div`
     width: max-content;
     height: max-content;
     background: transparent;
-    border: 2px solid white;
+    border: 3px solid white;
     padding-bottom: 20px;
     background-color: black;
 `
