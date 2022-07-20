@@ -12,7 +12,7 @@ Front-End:\
 Back-End:\
 -Edward Valentine ( https://github.com/Eddieval2022 ) \
 -Josh Foulkes ( https://github.com/EvoFox ) \
--Keshia Collins ( https://github.com/Keshia-90 ) \
+-Keshia Collins ( https://github.com/Keshia-90 ) 
 
 
 
