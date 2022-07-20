@@ -1,7 +1,8 @@
 .backgroundLogin{
     background-image: linear-gradient(75deg,
-    rgba(0,0,0, 0.6),rgba(0,0,0, 0.7),
-    transparent), url("../images/interior-large-distribution-warehouse-with-shelves-stacked-with-palettes-goods-ready-market.jpg");
+    rgba(0,0,0, 0.6),rgba(0,0,0, 0.4),
+    transparent),  linear-gradient(240deg,
+    rgba(0,0,0, 0.4),rgba(0,0,0, 0.5), transparent), url("../images/interior-large-distribution-warehouse-with-shelves-stacked-with-palettes-goods-ready-market.jpg");
     background-size: cover;
     height: 90.9vh;
 }

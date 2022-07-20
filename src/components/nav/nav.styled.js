@@ -8,12 +8,18 @@ export const Wrapper = styled.div`
     padding: 30px;
     width: 100%;
     position: fixed;
+    border-bottom: 10px double white;
+    border-top: 10px double white;
+    &:hover{
+
+    }
 `;
 
 export const NavbarItems = styled.a`
     font-size: 25px;
     margin-right: 25px;
     color: white;
+    padding: 22px;
     &:hover {
         cursor: pointer;
         background: white;
