@@ -17,14 +17,14 @@ export const Wrapper = styled.div`
 
 export const NavbarItems = styled.a`
     font-size: 25px;
-    margin-right: 25px;
+    margin-right: 15px;
     color: white;
-    padding: 0px 22px;
+    padding: 0px 17px;
     &:hover {
         cursor: pointer;
         background: white;
         color: black;
-        padding: 20px;
+        padding: 15px;
         border: 2px solid grey;
     }
 `;
