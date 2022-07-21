@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
-import { Form, InputLogin, LoginBtn, FormBox, FormTitle, FormOuter, AccountBtn, } from "./login.styled"
+import { Form, InputLogin, LoginBtn, FormBox, FormTitle, FormOuter, AccountBtn, LoginHeader, LoginHeaderBox } from "./login.styled"
 import Nav from "../nav/nav"
 import "./login.css"
 
@@ -40,6 +40,9 @@ const submitLogIn = async (e) => {
     {user && <Navigate to="/store" />}
     <div className="backgroundLogin">
         <FormOuter>
+            <LoginHeaderBox>
+            <LoginHeader>Selling everything, anywhere at the best prices</LoginHeader>
+            </LoginHeaderBox>
         <FormBox>
         <Form onSubmit={logBool ? submitLogIn : submitSignUp}>
         <FormTitle>{!logBool ? "Sign Up" : "Log In"}</FormTitle>
