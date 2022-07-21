@@ -6,7 +6,7 @@ export const FormOuter = styled.div`
     align-items: center;
     align-content: center;
     flex-direction: column;
-    padding-top: 200px;
+    padding-top: 120px;
 `;
 
 export const Form = styled.div`
@@ -29,6 +29,7 @@ export const InputLogin = styled.input`
     &:hover {
         background: white;
         border: 2px solid red;
+        color: black;
         ::-webkit-input-placeholder {color: rgba(0,0,0,0.7);} 
         ::-moz-placeholder { color: rgba(0,0,0,0.7);} 
         :-ms-input-placeholder { color: rgba(0,0,0,0.7);} 
@@ -88,4 +89,24 @@ export const FormTitle = styled.h3`
     padding: 10px;
     border: 2px solid white;
     color: white;
+`
+
+export const LoginHeaderBox = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: black;
+    color: white;
+    border: 2px dashed white;
+    position: absolute;
+    padding: 0px 10px;
+    bottom: 70px;
+
+`
+export const LoginHeader = styled.h2`
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    color: white;
+    position: relative;
 `

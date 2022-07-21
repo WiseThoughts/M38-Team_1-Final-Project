@@ -19,7 +19,7 @@ export const NavbarItems = styled.a`
     font-size: 25px;
     margin-right: 25px;
     color: white;
-    padding: 22px;
+    padding: 0px 22px;
     &:hover {
         cursor: pointer;
         background: white;
@@ -28,3 +28,11 @@ export const NavbarItems = styled.a`
         border: 2px solid grey;
     }
 `;
+
+
+export const Logo = styled.img`
+    display: flex;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+`
