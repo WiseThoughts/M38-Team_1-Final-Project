@@ -23,7 +23,7 @@ export const InputLogin = styled.input`
     padding:3px;
     font-size: 30px;
     color: white;
-    tex-decoration: none;
+    text-decoration: none;
     background: #8e8e8e;
     border: 2px solid black;
     &:hover {

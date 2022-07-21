@@ -12,7 +12,10 @@ return (<div>
     <div className="spacer"/>
 
     <div>
-        <h1>shop</h1>
+        <h1>Shop</h1>
+    </div>
+    <div>
+        <h2></h2>
     </div>
 
 

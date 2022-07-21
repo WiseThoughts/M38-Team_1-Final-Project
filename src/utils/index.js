@@ -51,3 +51,20 @@ export const updateFetch = async (filterObj, updateObj, setter) => {
         console.log(error);
     }
 };
+
+export const deleteFetch = async (setter) => {
+    try {
+        const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
+            method: "DELETE",
+            headers: { Authorization: localStorage.getItem("myToken") },
+        });
+        const data = await res.json();
+        if (data.msg !== "Successfully Deleted") {
+            throw new Error(data.msg);
+        } else {
+            setter();
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
