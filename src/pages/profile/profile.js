@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { updateFetch, deleteFetch } from "../../utils/index";
 import Nav from "../../components/nav/nav"
-import StarRating from "../../components/userDetails/starRating";
+import Tabs from '../../components/userDetails/tabs';
+// import StarRating from "../../components/userDetails/starRating";
+
+import "../profile/profile.css"
 
 
 const Profile = ({profilePic, setter, user}) => {
@@ -37,12 +40,9 @@ return (<div>
     </div>
     <div>
         <h2>Your Rating</h2>
-        <StarRating />
-        <a>⭐</a>
-        <a>⭐</a>
-        <a>⭐</a>
-        <a>⭐</a>
-        <a>⭐</a>
+        {/* <StarRating /> */}
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>100%</p>
     </div>
     <div>
     <form onSubmit={submitHandler}>
@@ -69,9 +69,12 @@ return (<div>
         <input
             onChange={(e) => setPostcode(e.target.value)}
             placeholder="Postcode" />
-        <button type="submit">Update</button>
+        <button className="nonTabButtons" type="submit">Update</button>
     </form>
-    <button onClick={() => deleteFetch(setter)}>Delete Account</button>
+    <button className="nonTabButtons" onClick={() => deleteFetch(setter)}>Delete Account</button>
+    <div>
+        <Tabs />
+    </div>
     </div>
     </div>
 );

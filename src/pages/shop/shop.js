@@ -1,4 +1,5 @@
 import Nav from "../../components/nav/nav"
+import Cart from "../../components/basket/basket.js";
 
 
 const Shop = ({}) => {
@@ -15,7 +16,10 @@ return (<div>
         <h1>Shop</h1>
     </div>
     <div>
-        <h2></h2>
+    <Cart />
+    </div>
+    <div>
+        <h2>Viewing all items</h2>
     </div>
 
 
