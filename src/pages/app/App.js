@@ -17,7 +17,6 @@ function App() {
   return (
   <div>
 
-
     <Routes>
         <Route path="/" element={<Login user={user} setter={setUser} />} />
         <Route path="/profile" element={<Profile user={user} setter={setUser} profilePic={profilePic} />} />

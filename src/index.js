@@ -4,7 +4,6 @@ import App from "./pages/app/App";
 import { BrowserRouter } from "react-router-dom";
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
@@ -50,5 +49,3 @@ export const deleteFetch = async (setter) => {
     console.log(error);
   }
 };
-
-
