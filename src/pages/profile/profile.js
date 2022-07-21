@@ -1,19 +1,21 @@
 import { useState } from "react";
 import { updateFetch, deleteFetch } from "../../utils/index";
 import Nav from "../../components/nav/nav"
+import StarRating from "../../components/userDetails/starRating";
 
 
 const Profile = ({profilePic, setter, user}) => {
     const [username, setUsername] = useState();
+    const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [address, setAddress] = useState();
+    const [street, setStreet] = useState();
     const [city, setCity] = useState();
     const [postcode, setPostcode] = useState();
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        const updateObj = { username, email, password, address, city, postcode };
+        const updateObj = { username, name, email, password, street, city, postcode };
         for (const key in updateObj) {
             if (!updateObj[key]) {
                 delete updateObj[key];
@@ -34,11 +36,23 @@ return (<div>
         <img src={profilePic} alt="users profile pic" />
     </div>
     <div>
+        <h2>Your Rating</h2>
+        <StarRating />
+        <a>⭐</a>
+        <a>⭐</a>
+        <a>⭐</a>
+        <a>⭐</a>
+        <a>⭐</a>
+    </div>
+    <div>
     <form onSubmit={submitHandler}>
         <h2>Update Profile</h2>
         <input 
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username" />
+        <input 
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Name" />
         <input
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email" />
@@ -47,7 +61,7 @@ return (<div>
             placeholder="Password"
             type="password" />
         <input
-            onChange={(e) => setAddress(e.target.value)}
+            onChange={(e) => setStreet(e.target.value)}
             placeholder="First Line of Address" />
         <input
             onChange={(e) => setCity(e.target.value)}
