@@ -44,7 +44,7 @@ const submitLogIn = async (e) => {
             <LoginHeader>Selling everything, anywhere at the best prices</LoginHeader>
             </LoginHeaderBox>
         <FormBox>
-        <Form onSubmit={logBool ? submitLogIn : submitSignUp}>
+        <Form onSubmit={submitSignUp}>
         <FormTitle>{!logBool ? "Sign Up" : "Log In"}</FormTitle>
         <InputLogin onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
         <div className="formSpaces" />
