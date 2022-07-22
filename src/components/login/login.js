@@ -84,7 +84,7 @@ const Login = ({ setter, user }) => {
 									type="password"
 								/>
 								<div className="formSpaces" />
-								<LoginBtn type="submit">
+								<LoginBtn onClick={submitSIgnUp}>
 									{logBool ? "Log In" : "Sign Up"}
 								</LoginBtn>
 								<div className="formSpaces" />
