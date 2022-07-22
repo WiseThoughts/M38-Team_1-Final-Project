@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+
 import {
 	Form,
 	InputLogin,
@@ -14,6 +15,7 @@ import {
 import { logIn, signUp } from "../../utils";
 import Nav from "../nav/nav";
 import "./login.css";
+
 
 const Login = ({ setter, user }) => {
 	const [username, setUsername] = useState();
@@ -35,6 +37,7 @@ const Login = ({ setter, user }) => {
 			await signUp({ username, name, email, password }, setter);
 		}
 	};
+
 
 	return (
 		<div>
