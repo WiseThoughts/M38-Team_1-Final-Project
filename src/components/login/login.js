@@ -25,15 +25,15 @@ const Login = ({ setter, user }) => {
 	const [logBool, setLogBool] = useState(false);
 
 	const submitSignUp = async (e) => {
-        e.preventDefault();
-        
-        if (logBool)
-        {
-            console.log(`Log In: ${username, password, setter}`);
+		e.preventDefault();
+
+		if (logBool) {
+			console.log(`Log In: ${username}, ${password}, ${setter}`);
 			await logIn(username, password, setter);
-        } else
-        {
-            console.log(`Sign Up: ${username, name, email, password, setter}`);
+		} else {
+			console.log(
+				`Sign Up: ${username}, ${name}, ${email}, ${password}, ${setter}`
+			);
 			await signUp({ username, name, email, password }, setter);
 		}
 	};
