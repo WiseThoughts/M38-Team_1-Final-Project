@@ -12,11 +12,14 @@ const Login = ({setter, user}) => {
     const [password, setPassword] = useState();
     const [logBool, setLogBool] = useState(false);
 
-const submitSignUp = async (e) => {
-    e.preventDefault();
-    await submitSignUp({username, name, email, password}, setter);
-}
-
+    const submitSignUp = async (e) => {
+        e.preventDefault();
+        if (logBool) {
+            await logIn(username, password, setter);
+        } else {
+            await signUp({ username, name, email, password }, setter);
+        }
+    };
 
 
     return (
