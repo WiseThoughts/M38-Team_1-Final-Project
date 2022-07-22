@@ -8,11 +8,27 @@ export const signUp = async (signObj, setter) => {
     });
     const data = await res.json();
     setter(data.user.username);
-      //localStorage.setItem("myToken", data.token);
+    localStorage.setItem("myToken", data.token);
     } catch (error) {
         console.log(error);
     }
 };
+
+export const logIn = async (username, password, setter) => {
+    try{
+        let path = `${process.env.REACT_APP_REST_API}login`;
+        const res = await fetch(path, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(username, password)
+        });
+        const data = await res.json();
+        setter(data.user.username);
+        localStorage.setItem("myToken", data.token);
+    }catch (error){
+        console.log(error)
+    }
+}
 
 export const updateFetch = async (filterObj, updateObj, setter) => {
     try {
@@ -30,6 +46,23 @@ export const updateFetch = async (filterObj, updateObj, setter) => {
         }
         if (updateObj.username) {
         setter(updateObj.username);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const deleteFetch = async (setter) => {
+    try {
+        const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
+            method: "DELETE",
+            headers: { Authorization: localStorage.getItem("myToken") },
+        });
+        const data = await res.json();
+        if (data.msg !== "Successfully Deleted") {
+            throw new Error(data.msg);
+        } else {
+            setter();
         }
     } catch (error) {
         console.log(error);
