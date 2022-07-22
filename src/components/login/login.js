@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { Form, InputLogin, LoginBtn, FormBox, FormTitle, FormOuter, AccountBtn, LoginHeader, LoginHeaderBox } from "./login.styled"
 import Nav from "../nav/nav"
