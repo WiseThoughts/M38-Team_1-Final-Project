@@ -11,7 +11,7 @@ import './App.css';
 function App() {
 
   const [user, setUser] = useState();
-  const profilePic = faker.image.avatar()
+  const profilePic = faker.image.avatar();
 
 
   return (

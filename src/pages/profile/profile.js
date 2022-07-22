@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { updateFetch, deleteFetch } from "../../utils/index";
+import { ProfileTitle, ProfilePic, ProfileForm, ProfileUpdateTitle, ProfileBacking, InputProfile, UpdateBtn, DeleteBtn  } from "./profile.styled";
 import Nav from "../../components/nav/nav"
 import Tabs from '../../components/userDetails/tabs';
 // import StarRating from "../../components/userDetails/starRating";
@@ -8,6 +9,7 @@ import "../profile/profile.css"
 
 
 const Profile = ({profilePic, setter, user}) => {
+
     const [username, setUsername] = useState();
     const [name, setName] = useState();
     const [email, setEmail] = useState();
@@ -15,6 +17,8 @@ const Profile = ({profilePic, setter, user}) => {
     const [street, setStreet] = useState();
     const [city, setCity] = useState();
     const [postcode, setPostcode] = useState();
+
+
 
     const submitHandler = async (e) => {
         e.preventDefault();
@@ -27,55 +31,97 @@ const Profile = ({profilePic, setter, user}) => {
     await updateFetch({ username: user }, updateObj, setter);
 };
 
-return (<div>
+
+
+return (
+<div>
+    
+
     <div>
         <Nav user={user} setter={setter} />
     </div>
     <div className="spacer"/>
+
+{/* I don't know why the backgound pic isn't working if I use the login backgound it works but not if I call it something else */}
+    <div className="backgroundProfile"> 
+    <ProfileBacking className="postioning">
     <div>
-        <h1>Your Profile</h1>
+        <ProfileTitle>{user}'s Profile</ProfileTitle>
     </div>
-    <div>
-        <img src={profilePic} alt="users profile pic" />
+
+    <div  className="profilePic">
+        <ProfilePic src={profilePic} alt="users profile pic" />
+        <p>{username}</p>
     </div>
-    <div>
-        <h2>Your Rating</h2>
-        {/* <StarRating /> */}
+
+    <div className="ratingBox">
+        <h2>Your seller Rating:</h2>
         <p>⭐⭐⭐⭐⭐</p>
-        <p>100%</p>
     </div>
+
     <div>
-    <form onSubmit={submitHandler}>
-        <h2>Update Profile</h2>
-        <input 
+    <ProfileUpdateTitle>Update Profile: </ProfileUpdateTitle>
+    <ProfileForm onSubmit={submitHandler}>
+
+        <div className="column">
+        <div className="row moveOver">
+        <div className="row ">
+        <InputProfile cl
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username" />
-        <input 
+
+        <InputProfile 
             onChange={(e) => setName(e.target.value)}
             placeholder="Name" />
-        <input
+        </div>
+        <div className="spaceBetween" />
+
+        <InputProfile
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email" />
-        <input
+
+        <InputProfile
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             type="password" />
-        <input
+        </div>
+
+        <div className="spaceBetween" />
+        <div className="row">
+        <InputProfile
             onChange={(e) => setStreet(e.target.value)}
             placeholder="First Line of Address" />
-        <input
+
+        <InputProfile
             onChange={(e) => setCity(e.target.value)}
             placeholder="City" />
-        <input
+
+        <InputProfile
             onChange={(e) => setPostcode(e.target.value)}
             placeholder="Postcode" />
-        <button className="nonTabButtons" type="submit">Update</button>
-    </form>
-    <button className="nonTabButtons" onClick={() => deleteFetch(setter)}>Delete Account</button>
+        </div>
+
+
+        <div className="row moveOver2">
+        <UpdateBtn type="submit">Update</UpdateBtn>
+
+        <DeleteBtn onClick={() => deleteFetch(setter)}>Delete Account</DeleteBtn>
+        </div>
+        </div>
+
+    </ProfileForm>
+    </div>
+
+
+
     <div>
         <Tabs />
     </div>
+
+    
+    </ProfileBacking>
     </div>
+
     </div>
 );
 };
