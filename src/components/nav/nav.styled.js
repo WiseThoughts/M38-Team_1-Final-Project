@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     padding: 30px;
     width: 100%;
     position: fixed;
+    z-index: 10;
     border-bottom: 10px double white;
     border-top: 10px double white;
     &:hover{
