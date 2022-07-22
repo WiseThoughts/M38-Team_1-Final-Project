@@ -47,7 +47,7 @@ const Login = ({ setter, user }) => {
 			<div className="spacer" />
 
 			<div>
-				{user && <Navigate to="/store" />}
+				{user && <Navigate to="/shop" />}
 				<div className="backgroundLogin">
 					<FormOuter>
 						<LoginHeaderBox>
