@@ -2,7 +2,7 @@ import Nav from "../../components/nav/nav"
 import Cart from "../../components/basket/basket.js";
 
 
-const Shop = ({}) => {
+const Shop = () => {
 
 
 return (<div>
