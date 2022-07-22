@@ -17,10 +17,6 @@ const submitSignUp = async (e) => {
     await submitSignUp({username, name, email, password}, setter);
 }
 
-const submitLogIn = async (e) => {
-    e.preventDefault();
-    await Login({username, password}, setter);
-}
 
 
     return (
