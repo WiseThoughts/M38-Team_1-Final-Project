@@ -1,0 +1,55 @@
+.backgroundProfile{
+    background-image: linear-gradient(75deg,
+    rgba(0,0,0, 0.6),rgba(0,0,0, 0.4),
+    transparent),  linear-gradient(240deg,
+    rgba(0,0,0, 0.4),rgba(0,0,0, 0.5), transparent), 
+    url("../../components/images/officbackground.jpg"), 
+    url("../../components/images/office2.jpg");
+    background-position: center center;
+    border-bottom: 5px solid white;
+    background-repeat: no-repeat repeat;
+}
+
+
+.profilePic{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.ratingBox{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+    color: white;
+}
+.ratingBox p {
+    flex-direction: column;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.UpdateInput{
+    display: flex;
+    width: 250px;
+    font-size: 20px;
+    color: black;
+}
+
+.postioning{
+    position: absolute;
+}
+
+.moveOver{
+    padding-left: 125px;
+}
+.moveOver2{
+    padding-top: 20px;
+    padding-left: 185px;
+}
+.spaceBetween{
+    padding: 5px;
+}
