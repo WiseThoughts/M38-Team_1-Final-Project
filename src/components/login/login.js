@@ -12,6 +12,8 @@ const Login = ({setter, user}) => {
     const [password, setPassword] = useState();
     const [logBool, setLogBool] = useState(false);
 
+
+
 const submitSignUp = async (e) => {
     e.preventDefault();
     await submitSignUp({username, name, email, password}, setter);

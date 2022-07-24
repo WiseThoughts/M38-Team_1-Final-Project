@@ -10,6 +10,14 @@
     background-repeat: no-repeat repeat;
 }
 
+.profileSpacer{
+    background-color: transparent;
+    padding: 20px;
+}
+
+.postioning{
+    position: absolute;
+}
 
 .profilePic{
     display: flex;
@@ -30,26 +38,4 @@
     flex-direction: column;
     padding-left: 10px;
     font-size: 20px;
-}
-
-.UpdateInput{
-    display: flex;
-    width: 250px;
-    font-size: 20px;
-    color: black;
-}
-
-.postioning{
-    position: absolute;
-}
-
-.moveOver{
-    padding-left: 125px;
-}
-.moveOver2{
-    padding-top: 20px;
-    padding-left: 185px;
-}
-.spaceBetween{
-    padding: 5px;
 }
