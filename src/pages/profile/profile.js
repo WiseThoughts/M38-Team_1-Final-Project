@@ -1,6 +1,6 @@
 import { ProfileTitle, ProfilePic, ProfileBacking  } from "./profile.styled";
 import Nav from "../../components/nav/nav"
-import Footer from "../../componets/footer"
+import Footer from "../../components/Footer/footer"
 import Tabs from '../../components/userDetails/tabs';
 // import StarRating from "../../components/userDetails/starRating";
 
@@ -39,9 +39,10 @@ const Profile = ({profilePic, setter, user}) => {
         </ProfileBacking>
         </div>
 
-            <div>
-                <Footer />
-            </div>
+        <div className="pageSpacer" />
+
+        <Footer />
+
 
         </div>
     );
