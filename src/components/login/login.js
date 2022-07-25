@@ -15,6 +15,7 @@ import {
 import { logIn, signUp } from "../../utils";
 import Nav from "../nav/nav";
 import "./login.css";
+import Footer from "../Footer/footer";
 
 
 const Login = ({ setter, user }) => {
@@ -95,7 +96,10 @@ const Login = ({ setter, user }) => {
 							</div>
 							<div className="black" />
 						</FormBox>
+
+						
 					</FormOuter>
+					<Footer />
 				</div>
 			</div>
 		</div>
