@@ -21,7 +21,7 @@ export const ProfileBacking = styled.div`
     flex-direction: column;
     justify-content: center;
     background: black;
-    height: 100%;
+    height: 110vh;
     width: 1050px;
     postion: relative;
     left: 400px;

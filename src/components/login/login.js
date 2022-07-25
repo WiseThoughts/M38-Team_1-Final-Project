@@ -9,8 +9,6 @@ import {
 	FormTitle,
 	FormOuter,
 	AccountBtn,
-	LoginHeader,
-	LoginHeaderBox,
 } from "./login.styled";
 import { logIn, signUp } from "../../utils";
 import Nav from "../nav/nav";
@@ -41,65 +39,71 @@ const Login = ({ setter, user }) => {
 
 
 	return (
+	<div>
+
 		<div>
-			<div>
-				<Nav />
-			</div>
+			<Nav />
+		</div>
 
-			<div>
-				{user && <Navigate to="/shopPage" />}
-				<div className="backgroundLogin">
-					<FormOuter>
-						<LoginHeaderBox>
-							<LoginHeader>
-								Selling everything, anywhere at the best prices
-							</LoginHeader>
-						</LoginHeaderBox>
-						<FormBox>
-							<Form onSubmit={submitSignUp}>
-								<FormTitle>{!logBool ? "Sign Up" : "Log In"}</FormTitle>
-								<InputLogin
-									onChange={(e) => setUsername(e.target.value)}
-									placeholder="Username"
-								/>
-								<div className="formSpaces" />
-								{!logBool && (
-									<InputLogin
-										onChange={(e) => setName(e.target.value)}
-										placeholder="Name"
-									/>
-								)}
-								<div className="formSpaces" />
-								{!logBool && (
-									<InputLogin
-										id="email"
-										onChange={(e) => setEmail(e.target.value)}
-										placeholder="Email"
-									/>
-								)}
-								<div className="formSpaces" />
-								<InputLogin
-									onChange={(e) => setPassword(e.target.value)}
-									placeholder="Password"
-									type="password"
-								/>
-								<div className="formSpaces" />
-								<LoginBtn onClick={submitSignUp}>
-									{logBool ? "Log In" : "Sign Up"}
-								</LoginBtn>
-								<div className="formSpaces" />
-							</Form>
-							<div className="btnMid">
-								<AccountBtn onClick={() => setLogBool(!logBool)}>
-									{logBool ? "Don't " : "Already "} have an account?
-								</AccountBtn>
-							</div>
-							<div className="black" />
+	<div>
+	{user && <Navigate to="/shopPage" />}
+	<div className="backgroundLogin">
+
+		<FormOuter>
+
+			<FormBox>
+				<Form onSubmit={submitSignUp}>
+					<FormTitle>{!logBool ? "Sign Up" : "Log In"}</FormTitle>
+
+					<InputLogin
+						onChange={(e) => setUsername(e.target.value)}
+						placeholder="Username"
+					/>
+					<div className="formSpaces" />
+
+					{!logBool && (
+						<InputLogin
+							onChange={(e) => setName(e.target.value)}
+							placeholder="Name"
+						/>
+					)}
+					<div className="formSpaces" />
+
+					{!logBool && (
+						<InputLogin
+							id="email"
+							onChange={(e) => setEmail(e.target.value)}
+							placeholder="Email"
+						/>
+					)}
+					<div className="formSpaces" />
+
+					<InputLogin
+						onChange={(e) => setPassword(e.target.value)}
+						placeholder="Password"
+						type="password"
+					/>
+					<div className="formSpaces" />
+
+					<LoginBtn onClick={submitSignUp}>
+						{logBool ? "Log In" : "Sign Up"}
+							</LoginBtn>
+					<div className="formSpaces" />
+
+					</Form>
+						<div className="btnMid">
+							<AccountBtn onClick={() => setLogBool(!logBool)}>
+								{logBool ? "Don't " : "Already "} have an account?
+							</AccountBtn>
+						</div>
+					<div className="black" />
+
 						</FormBox>
-
-						
 					</FormOuter>
+
+				<div className="bottom">
 					<Footer />
+				</div>
 				</div>
 			</div>
 		</div>
