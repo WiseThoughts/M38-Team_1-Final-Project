@@ -65,7 +65,7 @@ export const updateFetch = async (filterObj, updateObj, setter) => {
 
 export const deleteFetch = async (setter) => {
 	try {
-		const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
+		const res = await fetch(`${process.env.REACT_APP_REST_API}sell`, {
 			method: "DELETE",
 			headers: { Authorization: localStorage.getItem("myToken") },
 		});
@@ -75,6 +75,28 @@ export const deleteFetch = async (setter) => {
 		} else {
 			setter();
 		}
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+
+export const createListing = async (listObj, setter) => {
+	try {
+		let path = `${process.env.REACT_APP_REST_API}sell`; 
+		console.log(`Path: ${path}`);
+
+		const res = await fetch(path, {
+			method: "POST",
+			headers: { Authorization : localStorage.getItem("myToken") },
+			body: JSON.stringify(listObj),
+		});
+
+		const data = await res.json();
+		console.log(data);
+
+		setter(data.listObj);
+		
 	} catch (error) {
 		console.log(error);
 	}
