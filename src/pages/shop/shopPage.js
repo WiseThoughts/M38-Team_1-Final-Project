@@ -1,8 +1,9 @@
 import Nav from "../../components/nav/nav"
-import Cart from "../../components/basket/basket.js";
+import Items from "../../components/shop/items"
+import Cart from "../../components/shop/cart/cart";
 
 
-const Shop = () => {
+const ShopPage = () => {
 
 
 return (<div>
@@ -10,22 +11,21 @@ return (<div>
     <div>
         <Nav />
     </div>
-    <div className="spacer"/>
 
     <div>
         <h1>Shop</h1>
     </div>
-    <div>
-    <Cart />
-    </div>
-    <div>
-        <h2>Viewing all items</h2>
-    </div>
 
+    <div>
+        <Cart />
+    </div>
+    <div>
+        <Items />
+    </div>
 
 
     </div>
 );
 };
 
-export default Shop;
+export default ShopPage;
