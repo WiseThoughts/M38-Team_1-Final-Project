@@ -17,7 +17,7 @@ const Profile = ({profilePic, setter, user}) => {
             <Nav />
         </div>
 
-        <div className="backgroundProfile profileSpacer"> 
+        <div className="backgroundProfile"> 
         <ProfileBacking className="postioning">
         <ProfileTitle>{user}'s Profile</ProfileTitle>
 

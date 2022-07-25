@@ -44,7 +44,6 @@ const Login = ({ setter, user }) => {
 			<div>
 				<Nav />
 			</div>
-			<div className="spacer" />
 
 			<div>
 				{user && <Navigate to="/shop" />}

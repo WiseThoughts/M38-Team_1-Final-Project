@@ -10,7 +10,6 @@ return (<div>
     <div>
         <Nav />
     </div>
-    <div className="spacer"/>
 
     <div>
         <h1>Shop</h1>

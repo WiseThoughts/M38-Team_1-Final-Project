@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
     align-items: center;
     background-color: black;
     padding: 30px;
-    width: 100%;
-    position: fixed;
+    width: 96.8%;
+    position: relative;
     z-index: 10;
     border-bottom: 10px double white;
     border-top: 10px double white;
