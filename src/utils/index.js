@@ -79,3 +79,14 @@ export const deleteFetch = async (setter) => {
 		console.log(error);
 	}
 };
+
+export const fetchListings = async (setter) => {
+
+    try{
+        const res = await fetch `${process.env.REACT_APP_REST_API}sell`;
+        const data = await res.json();
+        setter(data);
+}   catch(error) {
+    console.log(error);
+}
+}
