@@ -13,7 +13,7 @@ const Nav = () => {
         <Logo src={logo} />
         <Link className="navBarLinks" to="/"><NavbarItems>Home</NavbarItems></Link>
         <Link className="navBarLinks" to="/profile"><NavbarItems>Profile</NavbarItems></Link>
-        <Link className="navBarLinks" to="/shop"><NavbarItems>Shop</NavbarItems></Link>
+        <Link className="navBarLinks" to="/shopPages"><NavbarItems>Shop</NavbarItems></Link>
         <Link className="navBarLinks" to="/about"><NavbarItems>About</NavbarItems></Link>
     </Wrapper>
 );

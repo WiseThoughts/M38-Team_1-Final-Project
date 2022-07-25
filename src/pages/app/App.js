@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { faker } from '@faker-js/faker';
 import Login from '../../components/login/login';
 import Profile from "../profile/profile";
-import Shop from '../shop/shop';
+import ShopPage from '../shop/shopPage';
 import About from "../about/about";
 
 import './App.css';
@@ -21,7 +21,7 @@ function App() {
     <Routes>
         <Route path="/" element={<Login user={user} setter={setUser} />} />
         <Route path="/profile" element={<Profile user={user} setter={setUser} profilePic={profilePic} />} />
-        <Route path="/shop" element={<Shop user={user} setter={setUser}/>} />
+        <Route path="/shopPage" element={<ShopPage user={user} setter={setUser}/>} />
         <Route path="/about" element={<About />} />
     </Routes>
 
