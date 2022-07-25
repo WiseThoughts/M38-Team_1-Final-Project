@@ -1,6 +1,7 @@
+// import { CreateListing } from "../listing/createListing";
 import Nav from "../../components/nav/nav"
-import Cart from "../../components/basket/basket.js";
-
+// import Cart from "../../components/basket/basket.js";
+import shop from "../../components/shop/shop"
 
 const Shop = ({}) => {
 
@@ -13,16 +14,11 @@ return (<div>
     <div className="spacer"/>
 
     <div>
-        <h1>Shop</h1>
-    </div>
-    <div>
-    <Cart />
+        <Shop />
     </div>
     <div>
         <h2>Viewing all items</h2>
     </div>
-
-
 
     </div>
 );
