@@ -31,9 +31,10 @@ export const logIn = async (signObj, setter) => {
 		});
 
 		const data = await res.json();
+		console.log(`data:`);
 		console.log(data);
-		
-		setter(data.user.username);
+
+		setter(data.user);
 		localStorage.setItem("myToken", data.token);
 	} catch (error) {
 		console.log(error);
