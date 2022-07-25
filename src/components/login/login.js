@@ -16,7 +16,6 @@ import { logIn, signUp } from "../../utils";
 import Nav from "../nav/nav";
 import "./login.css";
 
-
 const Login = ({ setter, user }) => {
 	const [username, setUsername] = useState();
 	const [name, setName] = useState();
@@ -28,16 +27,15 @@ const Login = ({ setter, user }) => {
 		e.preventDefault();
 
 		if (logBool) {
-			console.log(`Log In: ${username}, ${password}, ${setter}`);
-			await logIn(username, password, setter);
+			// console.log(`Log In: ${username}, ${password}, ${setter}`);
+			await logIn({ username, password }, setter);
 		} else {
-			console.log(
-				`Sign Up: ${username}, ${name}, ${email}, ${password}, ${setter}`
-			);
+			// console.log(
+			// 	`Sign Up: ${username}, ${name}, ${email}, ${password}, ${setter}`
+			// );
 			await signUp({ username, name, email, password }, setter);
 		}
 	};
-
 
 	return (
 		<div>

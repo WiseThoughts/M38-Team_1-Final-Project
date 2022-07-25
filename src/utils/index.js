@@ -19,7 +19,7 @@ export const signUp = async (signObj, setter) => {
 	}
 };
 
-export const logIn = async (username, password, setter) => {
+export const logIn = async (signObj, setter) => {
 	try {
 		let path = `${process.env.REACT_APP_REST_API}login`;
 		console.log(`Path: ${path}`);
@@ -27,12 +27,12 @@ export const logIn = async (username, password, setter) => {
 		const res = await fetch(path, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(username, password),
+			body: JSON.stringify(signObj),
 		});
 
 		const data = await res.json();
 		console.log(data);
-
+		
 		setter(data.user.username);
 		localStorage.setItem("myToken", data.token);
 	} catch (error) {
