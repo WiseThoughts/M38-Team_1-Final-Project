@@ -1,11 +1,15 @@
 import {FaWindowClose} from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import {useCart} from "react-use-cart"
 
 
-const Cart = (props ) => {
-  if(!props.show){
-    return null
-  }
+const Cart = (props) => {
+  const {isEmpty,totalUniqueItems, items, updateItemQuantity, removeItem}= useCart();
+  // if(!props.show){
+  //   return null
+  // }
+  if(isEmpty) 
+  return <p>Your cart is empty</p>
 
   return ( 
     <motion.div
@@ -29,11 +33,31 @@ const Cart = (props ) => {
 
       <button onClick={props.onClose}><FaWindowClose/></button>
       <div>
-      <h4>Your Bag</h4>
+      <h4>Your Bag ({totalUniqueItems})</h4>
+
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>
+            {item.quantity} x {item.name} &mdash;
+            <button
+              onClick={() => updateItemQuantity(item.id, item.quantity - 1)}
+            >
+              -
+            </button>
+            <button
+              onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
+            >
+              +
+            </button>
+            <button onClick={() => removeItem(item.id)}>&times;</button>
+          </li>
+        ))}
+      </ul>
+
       </div>
 
   <div>
-    <p> Your total is £</p>
+    <p> Your total is £ </p>
   </div>
   </motion.div>
   );

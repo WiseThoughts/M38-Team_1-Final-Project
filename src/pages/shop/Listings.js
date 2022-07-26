@@ -3,17 +3,17 @@ import { ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory
 import Countdown from 'react-countdown';
 import "./listing.css";
 
-//add to Basket function
 
 
 const Listings = (addToCart, listing) => {
 
   return (
+    
     <div>
 
     <ListingBox>
       <ListingContainer>
-        <ListingImg src="https://images-eu.ssl-images-amazon.com/images/I/51a5K1yXFEL._SY291_BO1,204,203,200_QL40_ML2_.jpg" alt = "Book Cover" />
+        <ListingImg/>
 
         <div className='column moveOverL'>
         <ListingTitle>The Family Remains</ListingTitle>
