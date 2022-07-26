@@ -6,7 +6,9 @@ import {BsCart4} from 'react-icons/bs'
 
 
 const Nav = () => {
-  return (
+
+
+    return (
     <Wrapper className="sizing">
         <Logo src={logo} />
         <Link className="navBarLinks" to="/"><NavbarItems>Home</NavbarItems></Link>
@@ -16,7 +18,7 @@ const Nav = () => {
         <Link className="navBarLinks" to="/listings"><NavbarItems>Listings</NavbarItems></Link>
         <Link className="navBarLinks" to="/cart"><NavbarItems><BsCart4/></NavbarItems></Link>
     </Wrapper>
-  );
+);
 };
 
 export default Nav;
