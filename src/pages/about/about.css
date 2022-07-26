@@ -13,16 +13,16 @@
     background-size: cover;
     height: 100vh;
     position: relative;
-    z-index: -5;
+    z-index: -1;
 }
 .moon{
     position: fixed;
-    z-index: -2;
+    z-index: 1;
 }
 .mountains{
     width: 100vw;
     position: fixed;
-    z-index: 0;
+    z-index: 1;
 }
 .aboutTitle{
     display: flex;
@@ -36,38 +36,88 @@
 
 
 .benBackground{
-    background-color: orangered;
+    background-image: url("../../components/images/earthBG.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: -2;
+}
+.benMoon{
+    width: 60vw;
+    top: 600px;
+    left: 100px; 
+    position: fixed;
+    z-index: 1;
 }
 
 .safBackground{
-    background-color: blueviolet;
+    background-image: url("../../components/images/earthBG.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: -3;
 }
 
 .ollyBackground{
-    background-color: aquamarine;
+    background-image: url("../../components/images/earthBG.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: -4;
 }
 
 .waizBackground{
-    background-color: powderblue;
+    background-image: url("../../components/images/earthBG.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: -5;
 }
 
 .lizBackground{
-    background-color: goldenrod;
+    background-image: url("../../components/images/earthBG.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: -6;
 }
 
 .alexBackground{
-    background-color: yellow;
+    background-image: url("../../components/images/earthBG.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: -7;
 }
 
 .joshBackground{
-    background-color: green;
+    background-image: url("../../components/images/dark spacy.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: -8;
+}
+.joshGalaxy{
+    width: 60vw;
+    top:0px;
+    left: 100px;
+    position: fixed;
+    z-index: 1;
 }
 
 .eddyBackground{
-    background-color: lightcoral;
+    background-image: url("../../components/images/earthBG.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: -9;
 }
 
 .keyBackground{
-    background-color: royalblue;
+    background-image: url("../../components/images/earthBG.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    z-index: -10;
 }
 

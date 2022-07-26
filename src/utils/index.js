@@ -19,6 +19,7 @@ export const signUp = async (signObj, setter) => {
 	}
 };
 
+
 export const logIn = async (signObj, setter) => {
 	try {
 		let path = `${process.env.REACT_APP_REST_API}login`;
@@ -40,6 +41,7 @@ export const logIn = async (signObj, setter) => {
 		console.log(error);
 	}
 };
+
 
 export const updateFetch = async (filterObj, updateObj, setter) => {
 	try {
@@ -63,13 +65,16 @@ export const updateFetch = async (filterObj, updateObj, setter) => {
 	}
 };
 
+
 export const deleteFetch = async (setter) => {
 	try {
-		const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
+		const res = await fetch(`${process.env.REACT_APP_REST_API}delete-account`, {
 			method: "DELETE",
 			headers: { Authorization: localStorage.getItem("myToken") },
 		});
+		console.log(res);
 		const data = await res.json();
+		console.log(data);
 		if (data.msg !== "Successfully Deleted") {
 			throw new Error(data.msg);
 		} else {
@@ -101,3 +106,16 @@ export const createListing = async (listObj, setter) => {
 		console.log(error);
 	}
 };
+
+
+export const fetchListings = async (setter) => {
+
+    try{
+        const res = await fetch `${process.env.REACT_APP_REST_API}sell`;
+        const data = await res.json();
+        setter(data);
+}   catch(error) {
+    console.log(error);
+}
+}
+

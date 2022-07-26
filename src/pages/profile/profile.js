@@ -39,9 +39,9 @@ const Profile = ({profilePic, setter, user}) => {
         </ProfileBacking>
         </div>
 
-        <div className="pageSpacer" />
-
+        <div>
         <Footer />
+        </div>
 
 
         </div>
