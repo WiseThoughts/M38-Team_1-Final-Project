@@ -43,7 +43,10 @@ const Login = ({ setter, user }) => {
 	};
 
 	return (
+	<div>
+
 		<div>
+
 			{user && <Navigate to="/shopPage" />}
 
 			<Nav />
@@ -89,15 +92,18 @@ const Login = ({ setter, user }) => {
 							</LoginBtn>
 							<div className="formSpaces" />
 						</Form>
+
 						<div className="btnMid">
 							<AccountBtn onClick={() => setLogBool(!logBool)}>
 								{logBool ? "Don't " : "Already "} have an account?
 							</AccountBtn>
 						</div>
+
 						<div className="black" />
 					</FormBox>
 				</FormOuter>
 				<Footer />
+
 			</div>
 		</div>
 	);

@@ -19,6 +19,7 @@ export const signUp = async (signObj, setter) => {
 	}
 };
 
+
 export const tokenLogin = async (token, setter) => {
 	try {
 		const res = await fetch(`${process.env.REACT_APP_REST_API}login`, {
@@ -33,6 +34,7 @@ export const tokenLogin = async (token, setter) => {
 		console.log(error);
 	}
 };
+
 
 export const logIn = async (signObj, setter) => {
 	try {
@@ -55,6 +57,7 @@ export const logIn = async (signObj, setter) => {
 		console.log(error);
 	}
 };
+
 
 export const updateFetch = async (filterObj, updateObj, setter) => {
 	try {
@@ -116,3 +119,15 @@ export const createListing = async (listObj, setter) => {
 		console.log(error);
 	}
 };
+
+export const fetchListings = async (setter) => {
+
+    try{
+        const res = await fetch `${process.env.REACT_APP_REST_API}sell`;
+        const data = await res.json();
+        setter(data);
+}   catch(error) {
+    console.log(error);
+}
+}
+
