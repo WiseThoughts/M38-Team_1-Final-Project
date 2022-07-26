@@ -1,17 +1,15 @@
-import { useState } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
-import { faker } from '@faker-js/faker';
-import Login from '../../components/login/login';
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { faker } from "@faker-js/faker";
+import Login from "../../components/login/login";
 import Profile from "../profile/profile";
-import ShopPage from '../shop/shopPage';
+import ShopPage from "../shop/shopPage";
 import About from "../about/about";
 
 // import Listing from '../../components/createListing/createListing';
-import ListPage from './listings/listings';
+import ListPage from "./listings/listings";
 
-import './App.css';
-
-
+import "./App.css";
 
 function App() {
 
