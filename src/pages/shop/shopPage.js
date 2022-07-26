@@ -6,6 +6,7 @@ import Listing from "./Listings";
 import { fetchListings } from "../../utils";
 
 
+
 const ShopPage = () => {
 
 const [listing, setListing] = useState([])
@@ -35,13 +36,13 @@ return (
 
     <div className ="shopItem">
         
-       <Listing/> <button className = "addToCart" onClick={() => addToCart(listing)} >Add to Cart</button> 
+        <Listing addToCart={addToCart} listing={listing} /> 
 
-       <Listing/> <button  className = "addToCart" onClick={() => addToCart(listing)}>Add to Cart</button> 
+        <Listing/>
 
-       <Listing/> <button  className = "addToCart" onClick={() => addToCart(listing)}>Add to Cart</button> 
+        <Listing/>
 
-       <Listing/> <button  className = "addToCart" onClick={() => addToCart(listing)}>Add to Cart</button> 
+        <Listing/>
 
 
     </div>
@@ -53,7 +54,6 @@ return (
     <div>
         <Items />
     </div>
-
 
     </div>
 );
