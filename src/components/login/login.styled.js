@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const FormOuter = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	flex-direction: column;
-	padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    height: 80vh;
 `;
 
 export const Form = styled.form`

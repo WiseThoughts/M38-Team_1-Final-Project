@@ -38,3 +38,4 @@ export const Logo = styled.img`
     border: 2px solid white;
     border-radius: 50%;
 `
+
