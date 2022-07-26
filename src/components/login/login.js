@@ -106,6 +106,8 @@ const Login = ({ setter, user }) => {
 
 			</div>
 		</div>
+									
+	</div>
 	);
 };
 
