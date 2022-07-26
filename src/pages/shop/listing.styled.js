@@ -34,7 +34,7 @@ export const ListingDescription = styled.p`
     colour: black;
     font-size: 20px;
     width: 400px;
-    margin-right: 200px;
+    margin-right: 100px;
 `
 
 export const ListingTimer = styled.p`

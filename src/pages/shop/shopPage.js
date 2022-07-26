@@ -1,31 +1,83 @@
 import Nav from "../../components/nav/nav"
-import Items from "../../components/shop/items"
-import Cart from "../../components/shop/cart/cart";
 import { useState, useEffect } from "react";
-import Listing from "./Listings";
-import { fetchListings } from "../../utils";
+//import Listing from "./Listings";
+//import { fetchListings } from "../../utils";
+//import { Link } from "react-router-dom";
+//import {BsCart4} from 'react-icons/bs'
+import { faker } from "@faker-js/faker";
+//import { NavbarItems } from "../../components/nav/nav.styled";
+import { ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from './listing.styled';
+import Countdown from 'react-countdown';
+import Basket from "./basket";
 
 
 
 const ShopPage = () => {
 
-const [listing, setListing] = useState([])
-const [cart, setCart] = useState([])
+    const [ setError] = useState()
+    const [items, setItems] = useState([])
+    const [cart, setCart] = useState([])
+    const [show, setShow] = useState()
 
 // api with products here  
 
-useEffect(() => {
-    fetchListings(setListing);
-}, [])
+    const fetchImages = async () => {
+        try {
+        const response = await fetch(
+            "https://api.thecatapi.com/v1/images/search?limit=10"
+        );
+        if (!response.ok) {
+            throw new Error(response.statusText);
+        }
+        const data = await response.json();
+        return data;
+        } catch (error) {
+            console.log(error);
+            setError("Couldn't fetch data(error 404)");
+            }
+        };
+
+    useEffect(() => {
+        const fetchData = async () => {
+        let itemData = await fetchImages();
+        itemData = itemData.map((items) => {
+            items.id = faker.random.numeric()
+            items.name = faker.commerce.productName()
+            items.image = faker.image.technics()
+            items.bid = faker.commerce.price(100, 500, 0, "£");
+            items.buy = faker.commerce.price(100, 500, 0, "£");
+            items.des = faker.commerce.productDescription(20)
+            items.cate = faker.commerce.productAdjective(1)
+            return items;
+            });
+        setItems(itemData);
+        };
+        fetchData();
+    }, []);
+
 
 
 //add to Basket function
-const addToCart = (listing) => {
-    let tempCart =[...cart];
-    tempCart.push(listing)
-    setCart(tempCart)
-    console.log(setCart)
-}
+    const addItem = (item)=>{
+        const exist = cart.find((x)=> x.id === item.id)
+        if (exist){
+        setCart(cart.map((x)=>
+        x.id === item.id ? {...exist, qty: exist.qty + 1}: x))
+        } else{
+        setCart([...cart, {...item, qty:1}])
+        }
+    };
+
+    const removeItem = (item) =>{
+        const exist = cart.find((x)=> x.id === item.id)
+        if (exist.qty === 1){
+        setCart(cart.filter((x)=> x.id !== item.id))
+        } else {
+        setCart(cart.map((x)=>
+        x.id === item.id ? {...exist, qty: exist.qty - 1}: x))
+        }
+    };
+
 
 return (
     <div>
@@ -34,25 +86,40 @@ return (
         <Nav />
     </div>
 
+
     <div className ="shopItem">
-        
-        <Listing addToCart={addToCart} listing={listing} /> 
+    <button onClick={() => setShow(true)}>Basket</button>
+        {/* <Basket cart={cart} removeItem={removeItem} addItem={addItem} title="Checkout Basket" onClose={() => setShow(false)} show={show} /> */}
+        <div>
+            {items.map((item) =>{
+                return(
+                    <ListingBox>
+                    <ListingContainer>
+                        <ListingImg src={item.image} alt = "Book Cover" />
+            
+                        <div className='column moveOverL'>
+                        <ListingTitle>{item.name}</ListingTitle>
+                        <ListingCategory>Category: {item.cate}</ListingCategory>
+                        <ListingCategory>Condition: [brand new]</ListingCategory>
+                        <ListingDescription>{item.des}</ListingDescription>
+                        <ListingTimer>Time left: <Countdown date={Date.now() + 10000} /></ListingTimer>
+                        </div>
 
-        <Listing/>
 
-        <Listing/>
+                        <div className='column postionEnd moveOverR'>
+                        <p>current bid: {item.bid}</p>
+                        <button className="bid">Bid</button>
+                        <p>buy it now price: {item.buy}</p>
+                        <button className="addToCart" onClick={() => addItem(item)} >Add to Cart</button> 
+                        </div>
+                    </ListingContainer>
+                    </ListingBox>
 
-        <Listing/>
+                )
+            })}
+        </div>
 
 
-    </div>
-
-    <div>
-        <Cart />
-    </div>
-
-    <div>
-        <Items />
     </div>
 
     </div>
