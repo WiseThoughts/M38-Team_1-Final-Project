@@ -19,6 +19,7 @@ export const signUp = async (signObj, setter) => {
 	}
 };
 
+
 export const logIn = async (signObj, setter) => {
 	try {
 		let path = `${process.env.REACT_APP_REST_API}login`;
@@ -40,6 +41,7 @@ export const logIn = async (signObj, setter) => {
 		console.log(error);
 	}
 };
+
 
 export const updateFetch = async (filterObj, updateObj, setter) => {
 	try {
@@ -63,6 +65,7 @@ export const updateFetch = async (filterObj, updateObj, setter) => {
 	}
 };
 
+
 export const deleteFetch = async (setter) => {
 	try {
 		const res = await fetch(`${process.env.REACT_APP_REST_API}delete-account`, {
@@ -82,6 +85,29 @@ export const deleteFetch = async (setter) => {
 	}
 };
 
+
+export const createListing = async (listObj, setter) => {
+	try {
+		let path = `${process.env.REACT_APP_REST_API}sell`; 
+		console.log(`Path: ${path}`);
+
+		const res = await fetch(path, {
+			method: "POST",
+			headers: { Authorization : localStorage.getItem("myToken") },
+			body: JSON.stringify(listObj),
+		});
+
+		const data = await res.json();
+		console.log(data);
+
+		setter(data.listObj);
+		
+	} catch (error) {
+		console.log(error);
+	}
+};
+
+
 export const fetchListings = async (setter) => {
 
     try{
@@ -92,3 +118,4 @@ export const fetchListings = async (setter) => {
     console.log(error);
 }
 }
+

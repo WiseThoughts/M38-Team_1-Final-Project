@@ -6,7 +6,11 @@ import Profile from "../profile/profile";
 import ShopPage from '../shop/shopPage';
 import About from "../about/about";
 
+// import Listing from '../../components/createListing/createListing';
+import ListPage from './listings/listings';
+
 import './App.css';
+
 
 
 function App() {
@@ -23,6 +27,7 @@ function App() {
         <Route path="/profile" element={<Profile user={user} setter={setUser} profilePic={profilePic} />} />
         <Route path="/shopPage" element={<ShopPage user={user} setter={setUser}/>} />
         <Route path="/about" element={<About />} />
+        <Route path="/listings" element={<ListPage user={user} setter={setUser}  />}/>
     </Routes>
 
 
