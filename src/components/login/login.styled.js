@@ -6,7 +6,7 @@ export const FormOuter = styled.div`
     align-items: center;
     align-content: center;
     flex-direction: column;
-    padding-top: 100px;
+    height: 80vh;
 `;
 
 export const Form = styled.div`

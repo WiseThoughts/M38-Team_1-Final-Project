@@ -26,7 +26,6 @@ const Listings = (addToCart, listing) => {
         </div>
 
         <div className='column postionEnd moveOverR'>
-        <p>****</p>
         <p>current bid: [currentPrice]</p>
         <button className="bid">Bid</button>
         <p>buy it now price: [£16.99]</p>
