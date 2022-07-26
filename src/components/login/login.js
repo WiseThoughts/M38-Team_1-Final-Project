@@ -9,8 +9,6 @@ import {
 	FormTitle,
 	FormOuter,
 	AccountBtn,
-	LoginHeader,
-	LoginHeaderBox,
 } from "./login.styled";
 import { logIn, signUp, tokenLogin } from "../../utils";
 import Nav from "../nav/nav";

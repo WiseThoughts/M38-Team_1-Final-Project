@@ -27,6 +27,7 @@ export const NavbarItems = styled.a`
         color: black;
         padding: 15px;
         border: 2px solid grey;
+        transition: 0.3s ease-out;
     }
 `;
 

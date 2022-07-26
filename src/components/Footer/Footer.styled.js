@@ -1,68 +1,41 @@
 import styled from "styled-components";
 import {Link} from 'react-router-dom';
 
-export const FooterContainer = styled.footer`
-    background-color: black ;
-`
 
-export const FooterWrap = styled.div`
-    padding: 48px 24px;
+export const FooterContainer = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-`
+    background-color: black;
+    padding: 30px;
+    width: 96.8%;
+    position: absolute;
+    z-index: 10;
+    border-top: 3px solid white;
+`;
 
-export const FooterLinksContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    
-    @media screen and (max-width: 820px) {
-        padding-tio: 32px;
-    }
-`
-
-export const FooterLinksWrapper = styled.div`
-    display: flex;
-    
-    @media screen and (max-width: 820px){
-        flex-direction: table-column;
-    }
-`
-
-export const FooterLinksItems = styled.div`
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 16px;
-    text-align: left;
-    width: 160px;
-    box-sizing: border-box;
+export const FooterLinksItems = styled.a`
+    font-size: 25px;
+    margin-right: 15px;
     color: white;
+    padding: 0px 17px;
+`;
 
-    @media screen and (max-width: 420px) {
-            margin: 0;
-            padding: 10px;
-            width: 100%;
-    }
-    `
+export const FooterLinkTitle = styled.h1`
+    font-size: 20px;
+    margin-bottom: 16px;
+`
 
-    export const FooterLinkTitle = styled.h1`
-        font-size: 14px;
-        margin-bottom: 16px;
-    `
-
-    export const FooterLink = styled(Link)`
-        color: white;
-        text-decoration: none;
-        margin-bottom: 0.5rem;
-        font-size: 14px;
-    
+export const FooterLink = styled(Link)`
+    color: white;
+    text-decoration: none;
+    padding-right: 10px; 
+    margin-bottom: 0.5rem;
+    font-size: 18px;
     &:hover {
+        cursor: pointer;
         color: gray;
         transition: 0.3s ease-out;
     }
-    `
+`
 

@@ -6,7 +6,7 @@ export const FormOuter = styled.div`
     align-items: center;
     align-content: center;
     flex-direction: column;
-    padding-top: 120px;
+    padding-top: 100px;
 `;
 
 export const Form = styled.div`
@@ -91,22 +91,4 @@ export const FormTitle = styled.h3`
     color: white;
 `
 
-export const LoginHeaderBox = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background: black;
-    color: white;
-    border: 2px dashed white;
-    position: absolute;
-    padding: 0px 10px;
-    bottom: 70px;
 
-`
-export const LoginHeader = styled.h2`
-    display: flex;
-    justify-content: center;
-    font-size: 35px;
-    color: white;
-    position: relative;
-`

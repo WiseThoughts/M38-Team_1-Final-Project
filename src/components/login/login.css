@@ -7,10 +7,6 @@
     height: 90.9vh;
 }
 
-.spacer{
-    background-color: transparent;
-    padding: 50px;
-}
 
 .btnMid{
     display: flex;
@@ -21,3 +17,6 @@
     padding: 2px;
 }
 
+.bottom{
+    margin-top: 200px;
+}

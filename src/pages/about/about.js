@@ -1,15 +1,31 @@
 
-import {TeamPics} from "./about.styled.js"
+import {} from "./about.styled.js"
 import './about.css';
 import Nav from "../../components/nav/nav.js";
-import BennyPic from "../../components/images/wisethoughts blue-redpink.png";
-import BenPic from "../../components/images/wisethoughts logo easy change.png";
-import BJNPic from "../../components/images/wisethoughts purple-yellow.png";
 import Moon from "../../components/images/moon.png";
 import Mountains from "../../components/images/mountain.png";
+import Ben from "./ben.js";
+import Saf from "./saf.js";
+import Olly from "./olly.js";
+import Waiz from "./waiz.js";
+import Liz from "./liz.js";
+import Alex from "./alex.js";
+import Josh from "./josh.js";
+import Eddy from "./eddy.js";
+import Keisha from "./key.js";
+import { useEffect, useState } from "react";
+
+
+//{visible && <div id="hide"><img className="joshGalaxy" src={Galaxy} alt="spining galaxy" /></div>}
+
+
 function About() {
 
+const [height, setHeight] = useState(0);
 
+    useEffect(()=>{
+        setHeight(document.documentElement.scrollHeight)
+    })
 
     return (
     <div>
@@ -27,58 +43,40 @@ function About() {
         <img className="mountains" src={Mountains} alt="mountains" />
         </div>
 
-        <div className="pages benBackground">
-        <TeamPics src={BennyPic} alt="Benny profile pic"/>
-        <h4>Benny</h4>
-        <h5>UX/Desgin</h5>
+        <div>
+        <Ben />
         </div>
 
-        <div className="pages safBackground">
-        <TeamPics src={BenPic} alt="Benny profile pic"/>
-        <h4>Safwan Arif</h4>
-        <h5>Front-End</h5>
+        <div>
+        <Saf />
         </div>
 
-        <div className="pages ollyBackground">
-        <TeamPics src={BJNPic} alt="Benny profile pic"/>
-        <h4>Oliver Thorburn</h4>
-        <h5>Front-End</h5>
+        <div>
+        <Olly />
         </div>
 
-        <div className="pages waizBackground">
-        <TeamPics src={BennyPic} alt="Benny profile pic"/>
-        <h4>Waiz Arhmed</h4>
-        <h5>Front-End</h5>
+        <div>
+        <Waiz />
         </div>
 
-        <div className="pages lizBackground">
-        <TeamPics src={BenPic} alt="Benny profile pic"/>
-        <h4>Elizabeth Olugbodi</h4>
-        <h5>Front-End</h5>
+        <div>
+        <Liz />
         </div>
 
-        <div className="pages alexBackground">
-        <TeamPics src={BJNPic} alt="Benny profile pic"/>
-        <h4>Alexander Kamara</h4>
-        <h5>Front-End</h5>
+        <div>
+        <Alex />
         </div>
 
-        <div className="pages joshBackground">
-        <TeamPics src={BennyPic} alt="Benny profile pic"/>
-        <h4>Joshua Foulkes</h4>
-        <h5>Back-End</h5>
+        <div>
+        <Josh />
         </div>
 
-        <div className="pages eddyBackground">
-        <TeamPics src={BenPic} alt="Benny profile pic"/>
-        <h4>Edward Valentine</h4>
-        <h5>Back-End</h5>
+        <div>
+        <Eddy />
         </div>
 
-        <div className="pages keyBackground">
-        <TeamPics src={BJNPic} alt="Benny profile pic"/>
-        <h4>Keshia Collins</h4>
-        <h5>Back-End</h5>
+        <div>
+        <Keisha />
         </div>
     </div>
     );
