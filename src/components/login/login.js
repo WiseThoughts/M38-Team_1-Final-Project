@@ -53,11 +53,6 @@ const Login = ({ setter, user }) => {
 
 			<div className="backgroundLogin">
 				<FormOuter>
-					<LoginHeaderBox>
-						<LoginHeader>
-							Selling everything, anywhere at the best prices
-						</LoginHeader>
-					</LoginHeaderBox>
 					<FormBox>
 						<Form onSubmit={submitSignUp}>
 							<FormTitle>{!logBool ? "Sign Up" : "Log In"}</FormTitle>
