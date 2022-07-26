@@ -21,21 +21,17 @@ function Tabs({ user, setter }) {
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
-		const updateObj = {
+
+		await updateFetch(
+			user, // used as filter, rest are the fields to be updated
 			username,
 			name,
 			email,
 			password,
 			street,
 			city,
-			postcode,
-		};
-		for (const key in updateObj) {
-			if (!updateObj[key]) {
-				delete updateObj[key];
-			}
-		}
-		await updateFetch({ username: user }, updateObj, setter);
+			postcode
+		);
 	};
 
 	const toggleTab = (index) => {
