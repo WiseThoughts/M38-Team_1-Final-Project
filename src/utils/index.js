@@ -65,7 +65,7 @@ export const updateFetch = async (filterObj, updateObj, setter) => {
 
 export const deleteFetch = async (setter) => {
 	try {
-		const res = await fetch(`${process.env.REACT_APP_REST_API}sell`, {
+		const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
 			method: "DELETE",
 			headers: { Authorization: localStorage.getItem("myToken") },
 		});
