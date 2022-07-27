@@ -31,8 +31,10 @@ function Tabs({ user, setter }) {
 			city,
 			postcode
 		);
+		if (username) {
+			setter(username);
+		}
 	};
-
 	const toggleTab = (index) => {
 		setToggleState(index);
 	};
