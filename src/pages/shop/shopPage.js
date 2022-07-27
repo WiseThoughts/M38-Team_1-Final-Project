@@ -17,12 +17,16 @@ import CartModal from "../../components/CartModal/CartModal";
 
 
 
+
 const ShopPage = () => {
 
     const [ setError] = useState()
     const [items, setItems] = useState([])
     const [cart, setCart] = useState([])
     const [showCartModal, toggleCartModal] = useState(false);
+    const CartModalHeader = "Basket ";
+    
+    const CartModalBody = "PRODUCTS"
 
 
 // api with products here  
@@ -96,7 +100,7 @@ return (
     <div className ="shopItem">
     <div className="modalButton">
         
-        {showCartModal && <CartModal/>}
+      <CartModal {... {showCartModal, CartModalHeader, CartModalBody, toggleCartModal}} />
         
         <button onClick={() => toggleCartModal(true)}>Basket</button></div>
 

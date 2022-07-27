@@ -1,21 +1,32 @@
 import React, { useState } from 'react'
-import { CartBackground, CartBody, CartHeader, CartWrapper } from './CartModalStyling'
+import { CartBackground, CartBody, CartHeader, CartModalButton, CartModalButtonWrapper, CartWrapper } from './CartModalStyling'
 import Basket from '../../pages/shop/basket'
+import {GiBasket} from "react-icons/gi"
 
-const CartModal = ({cart, removeItem, addItem}) => {
-    const [show, setShow] = useState(false)
 
-  return (
-    <>
+
+const CartModal = ({showCartModal, toggleCartModal, CartModalHeader, CartModalBody}) => {
+
+
+  return showCartModal ? (
+    <div>
         <CartBackground />
             <CartWrapper>
-                <CartHeader>Basket</CartHeader>
-                <CartBody><Basket cart={cart} removeItem={removeItem} addItem={addItem} title="Checkout Basket" onClose={() => setShow(false)} show={show} />
-            </CartBody>
+                <CartHeader>{CartModalHeader} <GiBasket/></CartHeader>
+                <CartBody> 
+                {CartModalBody}
+                
+                </CartBody>
+
+                <CartModalButtonWrapper>
+                    <CartModalButton>Check Out</CartModalButton>
+                    <CartModalButton onClick={()=> toggleCartModal(false)}>Cancel</CartModalButton>
+                </CartModalButtonWrapper>
             </CartWrapper>
      
-    </>
-  )
-}
+    </div>
+  ) :null;
+  }
+
 
 export default CartModal

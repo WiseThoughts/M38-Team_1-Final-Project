@@ -39,5 +39,24 @@ export const CartBody = styled.div`
   height: 10rem;
   border-bottom: 1px solid black;
   width: 90%;
+  height: 60%;
   ${sharedStyles}
 `;
+
+export const CartModalButtonWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+`
+
+export const CartModalButton = styled.button`
+    height: 2rem;
+    display: inline-block;
+    background: black;
+    border: none;
+    color: white;
+    font-weight: bold;
+    width: 10rem;
+    gap: 10px;
+`
