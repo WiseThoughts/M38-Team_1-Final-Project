@@ -10,6 +10,8 @@ import { ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory
 import Countdown from 'react-countdown';
 import Basket from "./basket";
 import { Link, Route, Routes } from "react-router-dom";
+import CartModal from "../../components/CartModal/CartModal";
+
 
 
 
@@ -21,7 +23,15 @@ const ShopPage = () => {
     const [ setError] = useState()
     const [items, setItems] = useState([])
     const [cart, setCart] = useState([])
-    const [show, setShow] = useState(false)
+    const [showCartModal, toggleCartModal] = useState(false);
+    const CartModalHeader = "Basket ";
+    
+    const CartModalBody = "PRODUCTS"
+
+    const handleClick = (item) => {
+        cart.push(item);
+        console.log(cart);
+    }
 
 
 // api with products here  
@@ -93,11 +103,15 @@ return (
 
 
     <div className ="shopItem">
+    <div className="modalButton">
+        
+      <CartModal {... {showCartModal, CartModalHeader, CartModalBody, toggleCartModal}} />
+        
+        <button onClick={() => toggleCartModal(true)}>Basket</button></div>
 
-    <button onClick={() => setShow(true)}>Basket</button>
-        {/* <Basket cart={cart} removeItem={removeItem} addItem={addItem} title="Checkout Basket" onClose={() => setShow(false)} show={show} /> */}
+   
         <div>
-            {items.map((item) =>{
+            {items.map((item, handleClick) =>{
                 return(
                     <ListingBox>
 
@@ -117,7 +131,9 @@ return (
                         <p>current bid: {item.bid}</p>
                         <button className="bid">Bid</button>
                         <p>buy it now price: {item.buy}</p>
-                        <button className="addToCart" onClick={() => addItem(item)} >Add to Cart</button> 
+                        <button className="addToCart" onClick={() => handleClick(item)}
+                        
+                        >Add to Cart</button> 
                         </div>
                     </ListingContainer>
                     </ListingBox>

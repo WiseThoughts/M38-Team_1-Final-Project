@@ -1,18 +1,18 @@
-
+import { useState } from "react";
 import "./basket.css"
+
 
 
 const Basket = ({ cart, removeItem, addItem}) => {
 
-
-
+ 
 
     return (
 
     <div>
    
         <div className="modalBody">
-            <div>{cart.length === 0 && <div>No Cats added</div>}</div>
+            {/* <div>{cart.length === 0 && <div>Nothing in the basket</div>}</div> */}
             { cart.map( ( item ) => (
             <div key={item.id} className="Cat" >
                 <h3>{ item.name }</h3>
@@ -37,9 +37,11 @@ const Basket = ({ cart, removeItem, addItem}) => {
             ))}
             </div>
 
-            <h5 className="modalFooter">Total: £</h5>
+            <h5 className="modalFooter">This is pulling from basket.js</h5>
         </div>
 
     );
 };
+
 export default Basket;
+
