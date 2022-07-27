@@ -111,7 +111,7 @@ return (
 
    
         <div>
-            {items.map((item, handleclick) =>{
+            {items.map((item, handleClick) =>{
                 return(
                     <ListingBox>
 

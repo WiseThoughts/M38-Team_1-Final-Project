@@ -4,6 +4,7 @@ import "./basket.css"
 
 
 const Basket = ({ cart, removeItem, addItem}) => {
+
  
 
     return (
@@ -36,7 +37,7 @@ const Basket = ({ cart, removeItem, addItem}) => {
             ))}
             </div>
 
-            <h5 className="modalFooter">Total: £</h5>
+            <h5 className="modalFooter">This is pulling from basket.js</h5>
         </div>
 
     );

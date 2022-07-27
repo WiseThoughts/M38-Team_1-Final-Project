@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { CartBackground, CartBody, CartHeader, CartModalButton, CartModalButtonWrapper, CartWrapper } from './CartModalStyling'
-// import Basket, {item} from '../../pages/shop/basket'
+import Basket, {item} from '../../pages/shop/basket'
 import {GiBasket} from "react-icons/gi"
+import ShopPage from '../../pages/shop/shopPage'
 
 
 
 
 
-const CartModal = ({showCartModal, toggleCartModal, CartModalHeader, CartModalBody, cart}) => {
+const CartModal = ({showCartModal, toggleCartModal, CartModalHeader, CartModalBody}) => {
+
+  const [cart, setCart] = useState([])
 
 
   return showCartModal ? (
@@ -17,7 +20,8 @@ const CartModal = ({showCartModal, toggleCartModal, CartModalHeader, CartModalBo
                 <CartHeader>{CartModalHeader} <GiBasket/></CartHeader>
                 <CartBody> 
                 {CartModalBody}
-                render ({cart})
+
+                <Basket cart = {cart}/>
                 
                 </CartBody>
 
