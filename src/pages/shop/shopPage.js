@@ -28,6 +28,11 @@ const ShopPage = () => {
     
     const CartModalBody = "PRODUCTS"
 
+    const handleClick = (item) => {
+        cart.push(item);
+        console.log(cart);
+    }
+
 
 // api with products here  
 
@@ -106,7 +111,7 @@ return (
 
    
         <div>
-            {items.map((item) =>{
+            {items.map((item, handleclick) =>{
                 return(
                     <ListingBox>
 
@@ -126,7 +131,9 @@ return (
                         <p>current bid: {item.bid}</p>
                         <button className="bid">Bid</button>
                         <p>buy it now price: {item.buy}</p>
-                        <button className="addToCart" onClick={() => addItem(item)} >Add to Cart</button> 
+                        <button className="addToCart" onClick={() => handleClick(item)}
+                        
+                        >Add to Cart</button> 
                         </div>
                     </ListingContainer>
                     </ListingBox>
