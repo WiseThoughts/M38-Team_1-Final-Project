@@ -39,7 +39,6 @@ const Basket = ({ cart, removeItem, addItem}) => {
 
             <h5 className="modalFooter">Total: £</h5>
         </div>
-    </div>
 
     );
 };
