@@ -2,7 +2,7 @@
 import "./basket.css"
 
 
-const Basket = ({ cart, removeItem, addItem,}) => {
+const Basket = ({ cart, removeItem, addItem}) => {
 
 
 
@@ -10,18 +10,10 @@ const Basket = ({ cart, removeItem, addItem,}) => {
     return (
 
     <div 
-        className={`modal ${show ? "show" : ""}`}
-        onClick={onClose}>
-        <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-        <div className="modalHeader">
-            <h4 className="modalTitle">{title}</h4>
-            <button onClick={onClose} className="btn">
-            &times;
-            </button>
-        </div>
+   
         <div className="modalBody">
-            <div>{cartItems.length === 0 && <div>No Cats added</div>}</div>
-            { cartItems.map( ( item ) => (
+            <div>{cart.length === 0 && <div>No Cats added</div>}</div>
+            { cart.map( ( item ) => (
             <div key={item.id} className="Cat" >
                 <h3>{ item.name }</h3>
                 <div className="mainBox">
