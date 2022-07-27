@@ -25,7 +25,7 @@ function App() {
         <Route path="/profile" element={<Profile user={user} setter={setUser} profilePic={profilePic} />} />
         <Route path="/shopPage" element={<ShopPage user={user} setter={setUser}/>} />
         <Route path="/about" element={<About />} />
-        <Route path="/listings" element={<Listings user={user} setter={setUser}  />}/>
+        <Route path="/createListings" element={<Listings user={user} setter={setUser}  />}/>
         <Route path="/basket" elememt={<Basket />}/>
     </Routes>
 
