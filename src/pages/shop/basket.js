@@ -9,7 +9,7 @@ const Basket = ({ cart, removeItem, addItem}) => {
 
     return (
 
-    <div 
+    <div>
    
         <div className="modalBody">
             <div>{cart.length === 0 && <div>No Cats added</div>}</div>
