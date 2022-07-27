@@ -13,7 +13,7 @@ const Basket = ({ cart, removeItem, addItem}) => {
    
         <div className="modalBody">
             <div>{cart.length === 0 && <div>No Cats added</div>}</div>
-            { cart.map( ( item ) => (
+            { cart.map( ( {item} ) => (
             <div key={item.id} className="Cat" >
                 <h3>{ item.name }</h3>
                 <div className="mainBox">
