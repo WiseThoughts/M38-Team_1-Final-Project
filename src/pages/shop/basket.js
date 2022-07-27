@@ -1,37 +1,29 @@
+import "./basket.css"
 
 
-
-const Basket = ({show, onClose, title, cartItems, removeItem, addItem,}) => {
+const Basket = ({ cart, removeItem, addItem,}) => {
 
 
 
     return (
-    <div 
-        className={`modal ${show ? "show" : ""}`}
-        onClick={onClose}>
-        <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-        <div className="modalHeader">
-            <h4 className="modalTitle">{title}</h4>
-            <button onClick={onClose} className="btn">
-            &times;
-            </button>
-        </div>
-        <div className="modalBody">
-            <div>{cartItems.length === 0 && <div>No Cats added</div>}</div>
-            { cartItems.map( ( item ) => (
-            <div key={item.id} className="Cat" >
+    <div >
+        
+        <div>
+            <div>{cart.length === 0 && <div>No items in checkout</div>}</div>
+            { cart.map( ( item ) => (
+            <div key={item.id} >
                 <h3>{ item.name }</h3>
-                <div className="mainBox">
-                <img className="basketImg" src={ item.url } alt="basket item" />
+                <div >
+                <img src={ item.url } alt="basket item" />
                 <div>
-                <div className="price">Sub-total: {(parseInt(item.price*item.qty))}</div>
-                <div className="mainButtons">
-                <button className="addButton"
+                <div >Sub-total: {(parseInt(item.price*item.qty))}</div>
+                <div >
+                <button 
                 onClick={()=> addItem(item)}>
                 +
                 </button>
-                <p className="qty">{item.qty}</p>
-                <button className="removeButton"
+                <p >{item.qty}</p>
+                <button 
                 onClick={()=> removeItem(item) }>
                 -
                 </button>
@@ -41,9 +33,8 @@ const Basket = ({show, onClose, title, cartItems, removeItem, addItem,}) => {
             </div>
             ))}
             </div>
-            <h5 className="modalFooter">Total: £</h5>
+            <h5 >Total: £</h5>
         </div>
-    </div>
     );
 };
 export default Basket;

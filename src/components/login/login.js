@@ -26,7 +26,7 @@ const Login = ({ setter, user }) => {
 		if (localStorage.key("myToken")) {
 			tokenLogin(localStorage.getItem("myToken"), setter);
 		}
-	});
+	}, []);
 
 	const submitSignUp = async (e) => {
 		e.preventDefault();

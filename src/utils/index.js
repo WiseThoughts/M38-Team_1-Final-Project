@@ -19,7 +19,6 @@ export const signUp = async (signObj, setter) => {
 	}
 };
 
-
 export const tokenLogin = async (token, setter) => {
 	try {
 		const res = await fetch(`${process.env.REACT_APP_REST_API}login`, {
@@ -34,7 +33,6 @@ export const tokenLogin = async (token, setter) => {
 		console.log(error);
 	}
 };
-
 
 export const logIn = async (signObj, setter) => {
 	try {
@@ -58,23 +56,52 @@ export const logIn = async (signObj, setter) => {
 	}
 };
 
-
-export const updateFetch = async (filterObj, updateObj, setter) => {
+export const updateFetch = async (
+	user,
+	username,
+	name,
+	email,
+	password,
+	street,
+	city,
+	postcode,
+	setter
+) => {
 	try {
+		console.log(
+			JSON.stringify({
+				user,
+				username,
+				name,
+				email,
+				password,
+				street,
+				city,
+				postcode,
+			})
+		);
 		const res = await fetch(`${process.env.REACT_APP_REST_API}user`, {
 			method: "PATCH",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
-				filterObj,
-				updateObj,
+				user,
+				username,
+				name,
+				email,
+				password,
+				street,
+				city,
+				postcode,
 			}),
 		});
+		console.log("res.body:");
+		console.log(res.body);
 		const data = await res.json();
 		if (data.msg !== "Successfully Updated") {
 			throw new Error(data.msg);
 		}
-		if (updateObj.username) {
-			setter(updateObj.username);
+		if (username) {
+			setter(username);
 		}
 	} catch (error) {
 		console.log(error);
@@ -121,13 +148,14 @@ export const createListing = async (listObj, setter) => {
 };
 
 export const fetchListings = async (setter) => {
-
-    try{
-        const res = await fetch `${process.env.REACT_APP_REST_API}sell`;
-        const data = await res.json();
-        setter(data);
-}   catch(error) {
-    console.log(error);
-}
-}
-
+	try {
+		const res = await fetch(`${process.env.REACT_APP_REST_API}shop`, {
+			method: "GET",
+		});
+		const data = await res.json();
+		console.log(data);
+		setter(data);
+	} catch (error) {
+		console.log(error);
+	}
+};
