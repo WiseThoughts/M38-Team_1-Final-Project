@@ -21,7 +21,6 @@ function Tabs({ user, setter }) {
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
-		console.log(user);
 		await updateFetch(
 			user, // used as filter, rest are the fields to be updated
 			username,
