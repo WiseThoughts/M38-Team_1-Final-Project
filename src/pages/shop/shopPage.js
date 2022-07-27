@@ -1,16 +1,12 @@
 import Nav from "../../components/nav/nav"
 import { useState, useEffect } from "react";
-//import Listing from "./Listings";
-//import { fetchListings } from "../../utils";
-//import { Link } from "react-router-dom";
 //import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
-import { NavbarItems } from "./shopPage.styled";
 import { ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from './listing.styled';
+import { BassketButton, BigBox, } from "./shopPage.styled"
 import Countdown from 'react-countdown';
-import Basket from "./basket";
-import { Link, Route, Routes } from "react-router-dom";
 import CartModal from "../../components/CartModal/CartModal";
+import "./shopPage.css"
 
 
 
@@ -101,17 +97,17 @@ return (
         <Nav />
     </div>
 
-
-    <div className ="shopItem">
+    <div className="backgroundShop"> 
+    <BigBox>
     <div className="modalButton">
         
-      <CartModal {... {showCartModal, CartModalHeader, CartModalBody, toggleCartModal}} />
+        <CartModal {... {cart, addItem, removeItem, showCartModal, CartModalHeader, CartModalBody, toggleCartModal}} />
         
-        <button onClick={() => toggleCartModal(true)}>Basket</button></div>
+        <BassketButton onClick={() => toggleCartModal(true)}>Basket</BassketButton></div>
 
-   
+
         <div>
-            {items.map((item, handleClick) =>{
+            {items.map((item) =>{
                 return(
                     <ListingBox>
 
@@ -131,8 +127,7 @@ return (
                         <p>current bid: {item.bid}</p>
                         <button className="bid">Bid</button>
                         <p>buy it now price: {item.buy}</p>
-                        <button className="addToCart" onClick={() => handleClick(item)}
-                        
+                        <button className="addToCart" onClick={() => addItem(item)}
                         >Add to Cart</button> 
                         </div>
                     </ListingContainer>
@@ -143,8 +138,8 @@ return (
         </div>
 
 
+    </BigBox>
     </div>
-
     </div>
 );
 };

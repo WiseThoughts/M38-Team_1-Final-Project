@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const ListingBox = styled.div`
     display: flex;
-    justify-content: flex-end;
-    padding: 20px 200px 20px 0px;
+    justify-content: center;
+    padding: 20px 20px 20px 20px;
 `
 
 export const ListingContainer = styled.div`
     display: flex;
     flex-direction: row;
     border: 4px solid black;
-    width: 60%;
+    width: 1300px;
 `
 
 export const ListingImg = styled.img`
