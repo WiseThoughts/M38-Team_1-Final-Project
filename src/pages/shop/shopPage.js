@@ -5,10 +5,14 @@ import { useState, useEffect } from "react";
 //import { Link } from "react-router-dom";
 //import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
-//import { NavbarItems } from "../../components/nav/nav.styled";
+import { NavbarItems } from "./shopPage.styled";
 import { ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from './listing.styled';
 import Countdown from 'react-countdown';
 import Basket from "./basket";
+import { Link, Route, Routes } from "react-router-dom";
+
+
+
 
 
 
@@ -17,7 +21,8 @@ const ShopPage = () => {
     const [ setError] = useState()
     const [items, setItems] = useState([])
     const [cart, setCart] = useState([])
-    const [show, setShow] = useState()
+    const [show, setShow] = useState(false)
+
 
 // api with products here  
 
@@ -41,7 +46,7 @@ const ShopPage = () => {
         const fetchData = async () => {
         let itemData = await fetchImages();
         itemData = itemData.map((items) => {
-            items.id = faker.random.numeric()
+            items.id = faker.random.alphaNumeric(20)
             items.name = faker.commerce.productName()
             items.image = faker.image.technics()
             items.bid = faker.commerce.price(100, 500, 0, "£");
@@ -88,12 +93,14 @@ return (
 
 
     <div className ="shopItem">
+
     <button onClick={() => setShow(true)}>Basket</button>
         {/* <Basket cart={cart} removeItem={removeItem} addItem={addItem} title="Checkout Basket" onClose={() => setShow(false)} show={show} /> */}
         <div>
             {items.map((item) =>{
                 return(
                     <ListingBox>
+
                     <ListingContainer>
                         <ListingImg src={item.image} alt = "Book Cover" />
             

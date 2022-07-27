@@ -1,11 +1,14 @@
 
+import "./basket.css"
 
 
-const Basket = ({show, onClose, title, cartItems, removeItem, addItem,}) => {
+const Basket = ({ cart, removeItem, addItem,}) => {
+
 
 
 
     return (
+
     <div 
         className={`modal ${show ? "show" : ""}`}
         onClick={onClose}>
@@ -41,9 +44,11 @@ const Basket = ({show, onClose, title, cartItems, removeItem, addItem,}) => {
             </div>
             ))}
             </div>
+
             <h5 className="modalFooter">Total: £</h5>
         </div>
     </div>
+
     );
 };
 export default Basket;

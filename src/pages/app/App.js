@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState} from "react";
 import { Route, Routes } from "react-router-dom";
 import { faker } from "@faker-js/faker";
 import Login from "../../components/login/login";
 import Profile from "../profile/profile";
 import ShopPage from "../shop/shopPage";
 import About from "../about/about";
-
-// import Listing from '../../components/createListing/createListing';
-import ListPage from "./listings/listings";
+import Basket from "../shop/basket";
+import Listing from '../../components/createListing/createListing';
 
 import "./App.css";
+
 
 function App() {
 
@@ -26,6 +26,7 @@ function App() {
         <Route path="/shopPage" element={<ShopPage user={user} setter={setUser}/>} />
         <Route path="/about" element={<About />} />
         <Route path="/listings" element={<ListPage user={user} setter={setUser}  />}/>
+        <Rotue path="/basket" elememt={<Basket />}/>
     </Routes>
 
 
