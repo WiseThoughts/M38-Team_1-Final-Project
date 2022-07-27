@@ -15,12 +15,14 @@ import { Link, Route, Routes } from "react-router-dom";
 
 
 
+
 const ShopPage = () => {
 
     const [ setError] = useState()
     const [items, setItems] = useState([])
     const [cart, setCart] = useState([])
     const [show, setShow] = useState(false)
+
 
 // api with products here  
 
@@ -82,7 +84,6 @@ const ShopPage = () => {
     };
 
 
-
 return (
     <div>
 
@@ -92,16 +93,14 @@ return (
 
 
     <div className ="shopItem">
-        
-        <Basket cart={cart} removeItem={removeItem} addItem={addItem}   ></Basket>
-        
-        {/* <Link to="/basket" item={items} cart={cart} removeItem={removeItem} addItem={addItem}><NavbarItems>Basket</NavbarItems></Link> */}
-        
-        
+
+    <button onClick={() => setShow(true)}>Basket</button>
+        {/* <Basket cart={cart} removeItem={removeItem} addItem={addItem} title="Checkout Basket" onClose={() => setShow(false)} show={show} /> */}
         <div>
             {items.map((item) =>{
                 return(
-                    <ListingBox key={item.id}>
+                    <ListingBox>
+
                     <ListingContainer>
                         <ListingImg src={item.image} alt = "Book Cover" />
             
