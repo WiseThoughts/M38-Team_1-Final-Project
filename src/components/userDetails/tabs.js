@@ -21,7 +21,6 @@ function Tabs({ user, setter }) {
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
-
 		await updateFetch(
 			user, // used as filter, rest are the fields to be updated
 			username,
@@ -32,8 +31,10 @@ function Tabs({ user, setter }) {
 			city,
 			postcode
 		);
+		if (username) {
+			setter(username);
+		}
 	};
-
 	const toggleTab = (index) => {
 		setToggleState(index);
 	};
