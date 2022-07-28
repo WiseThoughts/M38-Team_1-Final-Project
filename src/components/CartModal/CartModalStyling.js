@@ -66,3 +66,20 @@ export const CartModalButton = styled.button`
     width: 10rem;
     gap: 10px;
 `
+export const CartMapOutline = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+`
+
+export const CartMap = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+  border: 1px solid black;
+  width: 225px;
+`
