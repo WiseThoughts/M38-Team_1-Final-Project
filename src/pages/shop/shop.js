@@ -10,7 +10,7 @@ import "./shop.css"
 import BidButton from "../../components/BidButton";
 
 
-const Shop = () => {
+const Shop = ({user, setUser}) => {
 
     const [ setError] = useState()
     const [items, setItems] = useState([])
