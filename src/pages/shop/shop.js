@@ -2,25 +2,13 @@ import Nav from "../../components/nav/nav";
 import { useState, useEffect } from "react";
 //import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
-import { NavbarItems } from "./shopPage.styled";
-import {
-	ListingContainer,
-	ListingBox,
-	ListingImg,
-	ListingTitle,
-	ListingCategory,
-	ListingDescription,
-	ListingTimer,
-} from "./listing.styled";
-import Countdown from "react-countdown";
-import Basket from "./basket";
-import { Link, Route, Routes, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from "./shop.styled"
 import Countdown from 'react-countdown';
 import CartModal from "../../components/CartModal/CartModal";
 import "./shop.css"
 
-const ShopPage = ({ user }) => {
+const Shop = ({ user }) => {
 	const [setError] = useState();
 	const [items, setItems] = useState([]);
 	const [cart, setCart] = useState([]);
