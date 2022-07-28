@@ -6,6 +6,7 @@ import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, Listin
 import Countdown from 'react-countdown';
 import CartModal from "../../components/CartModal/CartModal";
 import "./shop.css"
+import Footer from "../../components/Footer/footer";
 
 
 
@@ -139,6 +140,7 @@ return (
 
 
     </BigBox>
+    <Footer />
     </div>
     </div>
 );

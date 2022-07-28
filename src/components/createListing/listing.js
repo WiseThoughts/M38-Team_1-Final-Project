@@ -3,7 +3,7 @@ import { useState } from "react";
 import { InputListing, ListingOuter, ListingForm} from "./listing.styled.js"
 import Nav from "../nav/nav";
 
-const Listing = (ListObj, setter) => {
+const Listing = (ListObj, setter, user) => {
   const [name, setName] = useState();
   const [startingPrice, setStartingPrice] = useState();
   const [buyNowPrice, setBuyNowPrice] = useState();
@@ -16,9 +16,10 @@ const Listing = (ListObj, setter) => {
   const submitListing = async (e) => {
 		e.preventDefault();
 			await createListing({  name, startingPrice, buyNowPrice, category, condition, description }, setter);
-		};
-	
-  
+	};
+
+
+
   return (
 
     <div>
@@ -53,7 +54,6 @@ const Listing = (ListObj, setter) => {
         />
         <button onClick={submitListing}>Create Listing</button>
       </ListingForm>
-      {/* <button >Create listing</button> */}
       </ListingOuter>
     </div>
   );
