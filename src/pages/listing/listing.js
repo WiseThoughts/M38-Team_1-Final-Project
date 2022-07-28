@@ -4,10 +4,13 @@ import Nav from "../../components/nav/nav"
 
 
 
-    export const Listing = () => {
+
+
+  function Listing () {
 
     const [productName, setProductName] = useState('');
     const [productPrice, setProductPrice] = useState(0);
+    const [prodcutFile, setFile] = useState("")
     const [productImg, setProductImg] = useState(null);
     const [error, setError] = useState('');
 
@@ -28,12 +31,33 @@ import Nav from "../../components/nav/nav"
     // add product
     const addProduct = (e) => {
         e.preventDefault();
-        
+
+    
+        // const uploadTask = storage.ref(`product-images/${process.env.REACT_APP_REST_API}/listing/im`).put(productImg);
+        // uploadTask.on('state_changed', snapshot => {
+        //     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        //     console.log(progress);
+        // }, err => setError(err.message)
+        //     , () => {
+        //         storage.ref('product-images').child(process.env.REACT_APP_REST_API).getDownloadURL().then(url => {
+        //             db.collection('Products').add({
+        //                 ProductName: productName,
+        //                 ProductPrice: Number(productPrice),
+        //                 ProductImg: url
+        //             }).then(() => {
+        //                 setProductName('');
+        //                 setProductPrice(0)
+        //                 setProductImg('');
+        //                 setError('');
+        //                 document.getElementById('file').value = '';
+        //             }).catch(err => setError(err.message))
+        //         })
+        //     })    
     };
 
     return (
-          
-        
+        <div>
+            <Nav/>
         <div className='container'>
             
             <br />
@@ -56,7 +80,8 @@ import Nav from "../../components/nav/nav"
             </form>
             {error && <span className='error-msg'>{error}</span>}
         </div>
-
+        </div>
     )
 };
 
+export default Listing;
