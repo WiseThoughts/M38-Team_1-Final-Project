@@ -91,17 +91,10 @@ const Shop = () => {
     function scroll(){
         document.body.style.overflow="hidden";
     }
-<<<<<<< HEAD
-
-  
-
-
-=======
     let totalItems = 0;
     for (const items of cart) {
         totalItems += items.quantity;
     }
->>>>>>> 775d68ab23d8121bb5eef2b21f48f418852b5ee6
 
 return (
     <div>
@@ -138,7 +131,7 @@ return (
                         <div className='column postionEnd moveOverR'>
                         
                         <BidButton/>
-                        
+
                         <p>Buy it now: {item.buy}</p>
                         <button className="addToCart" onClick={() => addItem(item)}
                         >Add to Cart</button> 

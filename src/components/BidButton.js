@@ -6,7 +6,7 @@ const BidButton = () => {
 
  const bidClicker1 = () => {
     setCurrentBid(currentBid+1)
-}
+    }
 
  const bidClicker2 = () => {
         setCurrentBid(currentBid+5)
