@@ -1,16 +1,14 @@
-import Nav from "../../components/nav/nav"
+import Nav from "../../components/nav/nav";
 import { useState, useEffect } from "react";
 import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
+import { Navigate } from "react-router-dom";
 import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from "./shop.styled"
 import Countdown from 'react-countdown';
 import CartModal from "../../components/CartModal/CartModal";
 import "./shop.css"
 import Footer from "../../components/Footer/footer";
-
-
-
-
+import BidButton from "../../components/BidButton";
 
 
 
@@ -20,6 +18,11 @@ const Shop = () => {
     const [items, setItems] = useState([])
     const [cart, setCart] = useState([])
     const [showCartModal, toggleCartModal] = useState(false);
+
+
+
+    
+    
 
 
 
@@ -57,8 +60,10 @@ const Shop = () => {
         setItems(itemData);
         };
         fetchData();
+        
     }, []);
 
+    
 
 
 //add to Basket function
@@ -99,6 +104,7 @@ return (
     <div>
         <Nav />
     </div>
+    
 
     <div className="backgroundShop"> 
     <BigBox>
@@ -125,9 +131,10 @@ return (
 
 
                         <div className='column postionEnd moveOverR'>
-                        <p>current bid: {item.bid}</p>
-                        <button className="bid">Bid</button>
-                        <p>buy it now price: {item.buy}</p>
+                        
+                        <BidButton/>
+
+                        <p>Buy it now: {item.buy}</p>
                         <button className="addToCart" onClick={() => addItem(item)}
                         >Add to Cart</button> 
                         </div>
