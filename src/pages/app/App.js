@@ -5,7 +5,7 @@ import Login from "../../components/login/login";
 import Profile from "../profile/profile";
 import Shop from "../shop/shop";
 import About from "../about/about";
-import Listings from "../../components/listings/listings.js";
+import Listing from "../../components/createListing/listing";
 
 import "./App.css";
 
@@ -24,7 +24,7 @@ function App() {
         <Route path="/profile" element={<Profile user={user} setter={setUser} profilePic={profilePic} />} />
         <Route path="/shop" element={<Shop user={user} setter={setUser}/>} />
         <Route path="/about" element={<About />} />
-        <Route path="/listings" element={<Listings user={user} setter={setUser}  />}/>
+        <Route path="/listing" element={<Listing user={user} setter={setUser}  />}/>
     </Routes>
 
 

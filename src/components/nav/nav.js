@@ -14,7 +14,7 @@ const Nav = () => {
         <Link className="navBarLinks" to="/"><NavbarItems>Home</NavbarItems></Link>
         <Link className="navBarLinks" to="/profile"><NavbarItems>Profile</NavbarItems></Link>
         <Link className="navBarLinks" to="/shop"><NavbarItems>Shop</NavbarItems></Link>
-        <Link className="navBarLinks" to="/listings"><NavbarItems>Listings</NavbarItems></Link>
+        <Link className="navBarLinks" to="/listing"><NavbarItems>Listing</NavbarItems></Link>
     </Wrapper>
 );
 };
