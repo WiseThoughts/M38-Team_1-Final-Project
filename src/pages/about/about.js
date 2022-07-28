@@ -29,6 +29,7 @@ const [height, setHeight] = useState(0);
 
     return (
     <div>
+        {!user && <Navigate to="/" />}
         <div className="sizing">
             <Nav /> 
         </div>
