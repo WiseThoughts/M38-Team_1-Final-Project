@@ -44,3 +44,9 @@ export const InputListing = styled.input`
 		}
 	}
 `;
+
+export const CartMap = styled.div`
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+`
