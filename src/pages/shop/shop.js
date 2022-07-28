@@ -98,7 +98,7 @@ const Shop = () => {
 
 return (
     <div>
-
+        {!user && <Navigate to="/" />}
     <div>
         <Nav />
     </div>
