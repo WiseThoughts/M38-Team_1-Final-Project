@@ -1,6 +1,7 @@
 import { createListing } from "../../utils";
 import { useState } from "react";
-import { InputListing, ListingOuter, ListingForm} from "./createListing.styled.js"
+import { InputListing, ListingOuter, ListingForm} from "./listing.styled.js"
+import Nav from "../nav/nav";
 
 const Listing = (ListObj, setter) => {
   const [name, setName] = useState();
@@ -9,7 +10,7 @@ const Listing = (ListObj, setter) => {
   const [category, setCategory] = useState();
   const [condition, setCondition] = useState();
   const [description, setDescription] = useState();
-  // const [img, setImg] = useState();
+
 
 
   const submitListing = async (e) => {
@@ -19,7 +20,11 @@ const Listing = (ListObj, setter) => {
 	
   
   return (
+
     <div>
+
+    <Nav />
+
       <ListingOuter >
       <ListingForm onSubmit={submitListing}>
         <InputListing
