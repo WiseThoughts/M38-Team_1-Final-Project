@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { faker } from "@faker-js/faker";
 import Login from "../../components/login/login";
@@ -9,8 +9,8 @@ import Listing from "../../components/createListing/listing";
 
 import "./App.css";
 
-
 function App() {
+
 
   const [user, setUser] = useState();
   const profilePic = faker.image.avatar();
