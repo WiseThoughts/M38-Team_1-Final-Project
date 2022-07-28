@@ -3,15 +3,11 @@
     rgba(0,0,0, 0.6),rgba(0,0,0, 0.4),
     transparent),  linear-gradient(240deg,
     rgba(0,0,0, 0.4),rgba(0,0,0, 0.5), transparent), 
-    url("../../components/images/officbackground.jpg"), 
-    url("../../components/images/office2.jpg");
-    background-position: center center;
+    url("../../components/images/officbackground.jpg");
+    background-size: cover;
+    background-position: center;
     border-bottom: 5px solid white;
-}
-
-.profileSpacer{
-    background-color: transparent;
-    padding: 20px;
+    height: 110vh;
 }
 
 .postioning{
@@ -38,3 +34,5 @@
     padding-left: 10px;
     font-size: 20px;
 }
+
+

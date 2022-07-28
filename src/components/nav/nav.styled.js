@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
     align-items: center;
     background-color: black;
     padding: 30px;
-    width: 100%;
-    position: fixed;
+    width: 96.8%;
+    position: relative;
     z-index: 10;
     border-bottom: 10px double white;
     border-top: 10px double white;
@@ -20,12 +20,12 @@ export const NavbarItems = styled.a`
     font-size: 25px;
     margin-right: 15px;
     color: white;
-    padding: 0px 17px;
+    padding: 15px;
     &:hover {
         cursor: pointer;
         background: white;
         color: black;
-        padding: 15px;
+        padding: 14px;
         border: 2px solid grey;
     }
 `;
@@ -37,3 +37,4 @@ export const Logo = styled.img`
     border: 2px solid white;
     border-radius: 50%;
 `
+

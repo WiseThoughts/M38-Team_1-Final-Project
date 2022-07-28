@@ -2,3 +2,9 @@
 .navBarLinks{
     text-decoration: none;
 }
+
+.navBarCart{
+    text-decoration: none;
+    display: flex;
+    justify-content: end;
+}

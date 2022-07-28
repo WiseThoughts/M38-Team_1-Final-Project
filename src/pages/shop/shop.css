@@ -1,0 +1,23 @@
+.backgroundShop{
+    background-image:  
+    url("../../components/images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    min-width: 100%;
+    height: 100%;
+    background-attachment:scroll;
+}
+
+.moveOverL{
+    padding-left: 15px;
+}
+
+.moveOverR{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spacer{
+    margin: 10px;
+}
