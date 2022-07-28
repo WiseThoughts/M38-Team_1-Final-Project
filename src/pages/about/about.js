@@ -1,5 +1,6 @@
 
 import {} from "./about.styled.js"
+import { Navigate } from "react-router-dom";
 import './about.css';
 import Nav from "../../components/nav/nav.js";
 import Moon from "../../components/images/moon.png";
