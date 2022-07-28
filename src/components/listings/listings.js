@@ -1,5 +1,5 @@
-import Listing from "../../../components/createListing/createListing"
-import Nav from "../../../components/nav/nav";
+import Listing from "../createListing/createListing"
+import Nav from "../nav/nav";
 
 const ListPage = (setter, user) => {
 
@@ -10,15 +10,15 @@ const ListPage = (setter, user) => {
         </div>
         <div> 
         <h1>Create a listing</h1>
-     </div>
-<Listing />
-     <div>
+    </div>
+      <Listing />
+    <div>
   
 </div>
 
 </div>
-       
-    
-  )
+
+
+)
 }
 export default ListPage;

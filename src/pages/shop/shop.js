@@ -1,8 +1,5 @@
 import Nav from "../../components/nav/nav";
 import { useState, useEffect } from "react";
-//import Listing from "./Listings";
-//import { fetchListings } from "../../utils";
-//import { Link } from "react-router-dom";
 //import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
 import { NavbarItems } from "./shopPage.styled";
@@ -18,6 +15,10 @@ import {
 import Countdown from "react-countdown";
 import Basket from "./basket";
 import { Link, Route, Routes, Navigate } from "react-router-dom";
+import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from "./shop.styled"
+import Countdown from 'react-countdown';
+import CartModal from "../../components/CartModal/CartModal";
+import "./shop.css"
 
 const ShopPage = ({ user }) => {
 	const [setError] = useState();
@@ -133,4 +134,4 @@ const ShopPage = ({ user }) => {
 	);
 };
 
-export default ShopPage;
+export default Shop;
