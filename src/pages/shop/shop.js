@@ -28,7 +28,7 @@ const Shop = () => {
     const fetchImages = async () => {
         try {
         const response = await fetch(
-            "https://api.thecatapi.com/v1/images/search?limit=10"
+            "https://fakestoreapi.com/products"
         );
         if (!response.ok) {
             throw new Error(response.statusText);
@@ -47,7 +47,6 @@ const Shop = () => {
         itemData = itemData.map((items) => {
             items.id = faker.random.alphaNumeric(20)
             items.name = faker.commerce.productName()
-            items.image = faker.image.technics()
             items.bid = faker.commerce.price(100, 500, 0, "£");
             items.buy = faker.commerce.price(100, 500, 0, "£");
             items.des = faker.commerce.productDescription(20)

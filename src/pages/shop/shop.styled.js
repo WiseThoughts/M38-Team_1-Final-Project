@@ -41,7 +41,9 @@ export const ListingContainer = styled.div`
 
 export const ListingImg = styled.img`
     outline: 3px dotted red;
-    height: 400px;
+    height: 300px;
+    width: 400px;
+    background-size: contain;
 `
 
 export const ListingTitle = styled.h2`
