@@ -1,5 +1,6 @@
 import { createListing } from "../../utils";
 import { useState } from "react";
+import { InputListing, ListingOuter, ListingForm} from "./createListing.styled.js"
 
 const Listing = (ListObj, setter) => {
   const [name, setName] = useState();
@@ -19,34 +20,36 @@ const Listing = (ListObj, setter) => {
   
   return (
     <div>
-      <form onSubmit={submitListing}>
-        <input
+      <ListingOuter >
+      <ListingForm onSubmit={submitListing}>
+        <InputListing
           onChange={(e) => setName(e.target.value)}
           placeholder="Listing title"
         />
-        <input
+        <InputListing
           onChange={(e) => setStartingPrice(e.target.value)}
           placeholder="Starting Price"
         />
-           <input
+        <InputListing
           onChange={(e) => setBuyNowPrice(e.target.value)}
           placeholder="Buy it now Price"
         />
-        <input
+        <InputListing
           onChange={(e) => setCategory(e.target.value)}
           placeholder="Category"
         />
-        <input
+        <InputListing
           onChange={(e) => setCondition(e.target.value)}
           placeholder="Condition"
         />
-        <input
+        <InputListing
           onChange={(e) => setDescription(e.target.value)}
           placeholder="Description"
         />
-        <button onClick={createListing}>Click to upload image</button>
-      </form>
+        <button onClick={submitListing}>Create Listing</button>
+      </ListingForm>
       {/* <button >Create listing</button> */}
+      </ListingOuter>
     </div>
   );
 };

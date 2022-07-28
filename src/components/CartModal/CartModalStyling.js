@@ -19,16 +19,19 @@ export const CartBackground = styled.div`
 
 export const CartWrapper = styled.div`
   background: white;
-  width: 40vw;
-  min-height: 25vw;
+  width: 60vw;
+  min-height: 35vw;
   position: absolute;
   border: 0.3rem solid black;
   border-radius: 0.5rem;
   top: 20%;
-  left: 30%;
+  left: 20%;
 `;
 
 export const CartHeader = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   height: 5rem;
   border-bottom: 1px solid black;
   width: 90%;
@@ -36,6 +39,9 @@ export const CartHeader = styled.div`
 `
 
 export const CartBody = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   height: 10rem;
   border-bottom: 1px solid black;
   width: 90%;

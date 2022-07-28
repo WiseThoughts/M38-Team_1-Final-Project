@@ -2,11 +2,10 @@ import Nav from "../../components/nav/nav"
 import { useState, useEffect } from "react";
 //import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
-import { ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from './listing.styled';
-import { BassketButton, BigBox, } from "./shopPage.styled"
+import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from "./shop.styled"
 import Countdown from 'react-countdown';
 import CartModal from "../../components/CartModal/CartModal";
-import "./shopPage.css"
+import "./shop.css"
 
 
 
@@ -14,15 +13,13 @@ import "./shopPage.css"
 
 
 
-const ShopPage = () => {
+const Shop = () => {
 
     const [ setError] = useState()
     const [items, setItems] = useState([])
     const [cart, setCart] = useState([])
     const [showCartModal, toggleCartModal] = useState(false);
-    const CartModalHeader = "Basket ";
-    
-    const CartModalBody = "PRODUCTS"
+
 
     const handleClick = (item) => {
         cart.push(item);
@@ -89,6 +86,13 @@ const ShopPage = () => {
         }
     };
 
+    function openButton(){
+        toggleCartModal(true);
+    }
+    function scroll(){
+        document.body.style.overflow="hidden";
+    }
+
 
 return (
     <div>
@@ -99,12 +103,10 @@ return (
 
     <div className="backgroundShop"> 
     <BigBox>
-    <div className="modalButton">
         
-        <CartModal {... {cart, addItem, removeItem, showCartModal, CartModalHeader, CartModalBody, toggleCartModal}} />
+        <CartModal {... {cart, addItem, removeItem, showCartModal, toggleCartModal}} />
         
-        <BassketButton onClick={() => toggleCartModal(true)}>Basket</BassketButton></div>
-
+        <BassketButton onClick={() => {openButton(); scroll()}}>Basket</BassketButton>
 
         <div>
             {items.map((item) =>{
@@ -144,4 +146,4 @@ return (
 );
 };
 
-export default ShopPage;
+export default Shop;
