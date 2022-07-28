@@ -16,6 +16,7 @@ import "./login.css";
 import Footer from "../Footer/footer";
 
 const Login = ({ setter, user }) => {
+
 	const [username, setUsername] = useState();
 	const [name, setName] = useState();
 	const [email, setEmail] = useState();
@@ -47,7 +48,7 @@ const Login = ({ setter, user }) => {
 
 		<div>
 
-			{user && <Navigate to="/shopPage" />}
+			{user && <Navigate to="/shop" />}
 
 			<Nav />
 
@@ -101,7 +102,7 @@ const Login = ({ setter, user }) => {
 
 			</div>
 		</div>
-									
+
 	</div>
 	);
 };

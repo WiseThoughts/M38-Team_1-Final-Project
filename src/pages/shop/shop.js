@@ -21,11 +21,6 @@ const Shop = () => {
     const [showCartModal, toggleCartModal] = useState(false);
 
 
-    const handleClick = (item) => {
-        cart.push(item);
-        console.log(cart);
-    }
-
 
 // api with products here  
 
