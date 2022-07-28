@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { faker } from "@faker-js/faker";
 import Login from "../../components/login/login";
 import Profile from "../profile/profile";
