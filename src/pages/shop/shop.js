@@ -1,16 +1,12 @@
-import Nav from "../../components/nav/nav"
+import Nav from "../../components/nav/nav";
 import { useState, useEffect } from "react";
 import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
+import { Navigate } from "react-router-dom";
 import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from "./shop.styled"
 import Countdown from 'react-countdown';
 import CartModal from "../../components/CartModal/CartModal";
 import "./shop.css"
-
-
-
-
-
 
 
 const Shop = () => {

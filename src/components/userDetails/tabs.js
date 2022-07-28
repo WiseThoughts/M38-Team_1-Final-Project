@@ -21,6 +21,28 @@ function Tabs({ user, setter }) {
 
 	const submitHandler = async (e) => {
 		e.preventDefault();
+		if (username === "") {
+			setUsername(undefined);
+		}
+		if (name === "") {
+			setName(undefined);
+		}
+		if (email === "") {
+			setEmail(undefined);
+		}
+		if (password === "") {
+			setPassword(undefined);
+		}
+		if (street === "") {
+			setStreet(undefined);
+		}
+		if (city === "") {
+			setCity(undefined);
+		}
+		if (postcode === "") {
+			setPostcode(undefined);
+		}
+		
 		await updateFetch(
 			user, // used as filter, rest are the fields to be updated
 			username,
