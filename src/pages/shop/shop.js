@@ -1,17 +1,13 @@
-import Nav from "../../components/nav/nav"
+import Nav from "../../components/nav/nav";
 import { useState, useEffect } from "react";
-//import {BsCart4} from 'react-icons/bs'
+import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
+import { Navigate } from "react-router-dom";
 import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from "./shop.styled"
 import Countdown from 'react-countdown';
 import CartModal from "../../components/CartModal/CartModal";
 import "./shop.css"
 import BidButton from "../../components/BidButton";
-
-
-
-
-
 
 
 const Shop = () => {
@@ -95,10 +91,17 @@ const Shop = () => {
     function scroll(){
         document.body.style.overflow="hidden";
     }
+<<<<<<< HEAD
 
   
 
 
+=======
+    let totalItems = 0;
+    for (const items of cart) {
+        totalItems += items.quantity;
+    }
+>>>>>>> 775d68ab23d8121bb5eef2b21f48f418852b5ee6
 
 return (
     <div>
@@ -113,7 +116,7 @@ return (
         
         <CartModal {... {cart, addItem, removeItem, showCartModal, toggleCartModal}} />
         
-        <BassketButton onClick={() => {openButton(); scroll()}}>Basket</BassketButton>
+        <BassketButton onClick={() => {openButton(); scroll()}}><BsCart4 />{cart.reduce((accum,item) => accum + item.qty, 0)}</BassketButton>
 
         <div>
             {items.map((item) =>{
