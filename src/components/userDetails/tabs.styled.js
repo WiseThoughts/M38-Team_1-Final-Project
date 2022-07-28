@@ -25,6 +25,7 @@ export const InputProfile = styled.input`
     text-decoration: none;
     background: #37474f;
     border: 2px solid white;
+    border-radius: 5px;
     width: 250px;
     &:hover {
         background: white;

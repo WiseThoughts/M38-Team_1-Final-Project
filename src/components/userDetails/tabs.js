@@ -9,6 +9,8 @@ import {
 } from "./tabs.styled";
 import "./tabs.css";
 
+
+
 function Tabs({ user, setter }) {
 	const [toggleState, setToggleState] = useState(1);
 	const [username, setUsername] = useState();
@@ -148,7 +150,7 @@ function Tabs({ user, setter }) {
 							<div className="formSpaces" />
 							<div className="row">
 								<UpdateBtn type="submit">Update</UpdateBtn>
-
+							
 								<DeleteBtn onClick={() => deleteFetch(setter)}>
 									Delete Account
 								</DeleteBtn>

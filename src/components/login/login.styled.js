@@ -7,7 +7,7 @@ export const FormOuter = styled.div`
 	align-items: center;
 	align-content: center;
 	flex-direction: column;
-	height: 90vh;
+	height: 80vh;
 `;
 
 export const Form = styled.form`
@@ -20,15 +20,16 @@ export const Form = styled.form`
 `;
 
 export const InputLogin = styled.input`
-	padding: 3px;
+	padding: 5px 3px 3px 3px;
 	font-size: 30px;
 	color: white;
 	text-decoration: none;
 	background: #8e8e8e;
-	border: 2px solid black;
+	border: 3px solid white;
+	border-radius: 10px;
 	&:hover {
 		background: white;
-		border: 2px solid red;
+		border: 3px solid red;
 		color: black;
 		::-webkit-input-placeholder {
 			color: rgba(0, 0, 0, 0.7);
@@ -52,6 +53,7 @@ export const LoginBtn = styled.button`
 	width: 250px;
 	height: 40px;
 	border: 2px solid white;
+	border-radius: 10px;
 	&:hover {
 		cursor: pointer;
 		background: white;
@@ -67,6 +69,7 @@ export const AccountBtn = styled.button`
 	width: 250px;
 	height: 40px;
 	border: 2px solid white;
+	border-radius: 10px;
 	&:hover {
 		cursor: pointer;
 		background: white;
@@ -95,5 +98,6 @@ export const FormTitle = styled.h3`
 	background: black;
 	padding: 10px;
 	border: 2px solid white;
+	border-radius: 10px;
 	color: white;
 `;

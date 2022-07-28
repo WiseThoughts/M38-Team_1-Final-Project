@@ -14,10 +14,11 @@ export const BigBox = styled.div`
 export const BassketButton = styled.button`
     width: fit-content;
     height: fit-content;
-    border: 10px double black;
+    border: 10px double white;
     font-size: 25px;
     padding: 5px;
-    background: orange;
+    background: black;
+    color: white;
     &::-webkit-scrollbar {
         top: 0;
         transition: 3s;
@@ -34,6 +35,7 @@ export const ListingContainer = styled.div`
     display: flex;
     flex-direction: row;
     border: 4px solid black;
+    border-radius: 10px;
     width: 1300px;
 `
 

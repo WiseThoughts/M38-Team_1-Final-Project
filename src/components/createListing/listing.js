@@ -6,7 +6,7 @@ import ListingModal from "../ListingModal/ListingModal";
 import {BsShopWindow} from 'react-icons/bs'
 
 
-const Listing = (ListObj, setter) => {
+const Listing = (ListObj, setter, user) => {
   const [name, setName] = useState();
   const [startingPrice, setStartingPrice] = useState();
   const [buyNowPrice, setBuyNowPrice] = useState();
@@ -22,9 +22,6 @@ const Listing = (ListObj, setter) => {
 			await createListing({  name, startingPrice, buyNowPrice, category, condition, description }, setter);
 		};
 
-
-	
-  
   return (
 
     <div>
@@ -67,7 +64,6 @@ const Listing = (ListObj, setter) => {
         />
         <button onClick={submitListing}>Create Listing</button>
       </ListingForm>
-      {/* <button >Create listing</button> */}
       </ListingOuter>
     </div>
   );
