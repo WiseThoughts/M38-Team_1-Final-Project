@@ -1,6 +1,6 @@
 import Nav from "../../components/nav/nav"
 import { useState, useEffect } from "react";
-//import {BsCart4} from 'react-icons/bs'
+import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
 import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from "./shop.styled"
 import Countdown from 'react-countdown';
@@ -10,22 +10,12 @@ import BidButton from "../../components/BidButton";
 
 
 
-
-
-
-
 const Shop = () => {
 
     const [ setError] = useState()
     const [items, setItems] = useState([])
     const [cart, setCart] = useState([])
     const [showCartModal, toggleCartModal] = useState(false);
-
-
-
-    
-    
-
 
 
 // api with products here  
@@ -96,8 +86,10 @@ const Shop = () => {
         document.body.style.overflow="hidden";
     }
 
-  
-
+    let totalItems = 0;
+    for (const items of cart) {
+        totalItems += items.quantity;
+    }
 
 
 return (
@@ -113,7 +105,7 @@ return (
         
         <CartModal {... {cart, addItem, removeItem, showCartModal, toggleCartModal}} />
         
-        <BassketButton onClick={() => {openButton(); scroll()}}>Basket</BassketButton>
+        <BassketButton onClick={() => {openButton(); scroll()}}><BsCart4 />{cart.reduce((accum,item) => accum + item.qty, 0)}</BassketButton>
 
         <div>
             {items.map((item) =>{
