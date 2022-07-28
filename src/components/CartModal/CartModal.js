@@ -1,26 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { CartBackground, CartBody, CartHeader, CartModalButton, CartModalButtonWrapper, CartWrapper } from './CartModalStyling'
-import Basket, {item} from '../../pages/shop/basket'
 import {GiBasket} from "react-icons/gi"
-import ShopPage from '../../pages/shop/shopPage'
+import Shop from '../../pages/shop/shop'
 
 
 
 
 
-const CartModal = ({cart, addItem, removeItem, showCartModal, toggleCartModal, CartModalHeader, CartModalBody}) => {
+const CartModal = ({cart, addItem, removeItem, showCartModal, toggleCartModal, }) => {
 
-  // const [cart, setCart] = useState([])
-
+  function closeButton(){
+    toggleCartModal(false);
+  }
+  function scroll(){
+    document.body.style.overflow="";
+  }
 
   return showCartModal ? (
     <div>
         <CartBackground />
             <CartWrapper>
-                <CartHeader>{CartModalHeader} <GiBasket/></CartHeader>
+                <CartHeader>Basket <GiBasket/></CartHeader>
                 <CartBody> 
-                {CartModalBody}
-              <div>{cart.length === 0 && <div>Nothing in the basket</div>}</div>
+                <CartBody>
+                <p>Products</p>
+                {cart.length === 0 && <div>Nothing in the basket</div>}
+                </CartBody>
                 { cart.map( ( item ) => (
                 <div key={item.id} >
                 <h3>{ item.name }</h3>
@@ -39,7 +44,7 @@ const CartModal = ({cart, addItem, removeItem, showCartModal, toggleCartModal, C
 
                 <CartModalButtonWrapper>
                     <CartModalButton>Check Out</CartModalButton>
-                    <CartModalButton onClick={()=> toggleCartModal(false)}>Cancel</CartModalButton>
+                    <CartModalButton onClick={()=>{ closeButton(); scroll() }}>Cancel</CartModalButton>
                 </CartModalButtonWrapper>
             </CartWrapper>
     

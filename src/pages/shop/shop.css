@@ -7,3 +7,17 @@
     height: 100%;
     background-attachment:scroll;
 }
+
+.moveOverL{
+    padding-left: 15px;
+}
+
+.moveOverR{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spacer{
+    margin: 10px;
+}
