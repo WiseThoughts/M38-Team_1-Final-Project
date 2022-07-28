@@ -20,12 +20,6 @@ const Shop = () => {
     const [showCartModal, toggleCartModal] = useState(false);
 
 
-
-    
-    
-
-
-
 // api with products here  
 
     const fetchImages = async () => {

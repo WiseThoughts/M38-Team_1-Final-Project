@@ -2,6 +2,9 @@ import { createListing } from "../../utils";
 import { useState } from "react";
 import { InputListing, ListingOuter, ListingForm} from "./listing.styled.js"
 import Nav from "../nav/nav";
+import ListingModal from "../ListingModal/ListingModal";
+import {BsShopWindow} from 'react-icons/bs'
+
 
 const Listing = (ListObj, setter, user) => {
   const [name, setName] = useState();
@@ -10,21 +13,28 @@ const Listing = (ListObj, setter, user) => {
   const [category, setCategory] = useState();
   const [condition, setCondition] = useState();
   const [description, setDescription] = useState();
+  const [showListingModal, toggleListingModal] = useState(false);
 
 
 
   const submitListing = async (e) => {
 		e.preventDefault();
 			await createListing({  name, startingPrice, buyNowPrice, category, condition, description }, setter);
-	};
-
-
+		};
 
   return (
 
     <div>
 
-    <Nav />
+    <div><Nav /></div>
+
+    <div>
+
+      <ListingModal {...{showListingModal, toggleListingModal}} />
+
+      <button onClick={()=> toggleListingModal(true)}><BsShopWindow/></button>
+
+    </div>
 
       <ListingOuter >
       <ListingForm onSubmit={submitListing}>
