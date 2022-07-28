@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 //{visible && <div id="hide"><img className="joshGalaxy" src={Galaxy} alt="spining galaxy" /></div>}
 
 
-function About() {
+function About({user, setUser}) {
 
 const [height, setHeight] = useState(0);
 
