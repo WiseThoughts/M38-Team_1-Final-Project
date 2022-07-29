@@ -19,10 +19,6 @@ export const BassketButton = styled.button`
     padding: 5px;
     background: black;
     color: white;
-    &::-webkit-scrollbar {
-        top: 0;
-        transition: 3s;
-    }
 `
 
 export const ListingBox = styled.div`
@@ -37,11 +33,12 @@ export const ListingContainer = styled.div`
     border: 4px solid black;
     border-radius: 10px;
     width: 1300px;
+    max-height: 400px;
 `
 
 export const ListingImg = styled.img`
     outline: 3px dotted red;
-    height: 300px;
+    height: 400px;
     width: 400px;
     background-size: contain;
 `
@@ -61,8 +58,9 @@ export const ListingCategory = styled.p`
 export const ListingDescription = styled.p`
     colour: black;
     font-size: 20px;
-    width: 400px;
-    margin-right: 100px;
+    width: 600px;
+    height: 150px;
+    margin-right: 50px;
 `
 
 export const ListingTimer = styled.p`

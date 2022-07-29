@@ -1,10 +1,10 @@
 .backgroundListing{
     background-image:  
-    url("../../components/images/bg.jpg");
+    url("../../components/images/store1.jpg");
     background-size: cover;
     background-position: center;
     min-width: 100%;
-    height: 50vh;
+    height: 90vh;
     background-attachment:scroll;
 }
 
