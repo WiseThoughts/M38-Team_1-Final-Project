@@ -3,33 +3,29 @@ import { useState, useEffect } from "react";
 import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
 import { Navigate } from "react-router-dom";
-import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from "./shop.styled"
+import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer, BuyText } from "./shop.styled"
 import Countdown from 'react-countdown';
 import CartModal from "../../components/CartModal/CartModal";
 import "./shop.css"
+import Footer from "../../components/Footer/footer";
 import BidButton from "../../components/BidButton";
+import { AddToCartBTN } from "../../components/ListingModal/listingMoadal.styling";
 
 
 const Shop = ({user, setUser}) => {
-
     const [ setError] = useState()
     const [items, setItems] = useState([])
     const [cart, setCart] = useState([])
     const [showCartModal, toggleCartModal] = useState(false);
 
 
-
-    
-    
-
-
-
 // api with products here  
+//back up api link https://api.thecatapi.com/v1/images/search?limit=10   https://fakestoreapi.com/products
 
     const fetchImages = async () => {
         try {
         const response = await fetch(
-            "https://api.thecatapi.com/v1/images/search?limit=10"
+            "https://fakestoreapi.com/products"
         );
         if (!response.ok) {
             throw new Error(response.statusText);
@@ -47,12 +43,11 @@ const Shop = ({user, setUser}) => {
         let itemData = await fetchImages();
         itemData = itemData.map((items) => {
             items.id = faker.random.alphaNumeric(20)
-            items.name = faker.commerce.productName()
-            items.image = faker.image.technics()
-            items.bid = faker.commerce.price(100, 500, 0, "£");
-            items.buy = faker.commerce.price(100, 500, 0, "£");
-            items.des = faker.commerce.productDescription(20)
-            items.cate = faker.commerce.productAdjective(1)
+            // items.buy = faker.commerce.price(100, 500, 0, "£");
+            // items.name = faker.commerce.productName();
+            // items.des = faker.commerce.productDescription(20);
+            // items.cate = faker.commerce.productAdjective(1);
+            // items.pic = faker.image.business()
             return items;
             });
         setItems(itemData);
@@ -91,14 +86,17 @@ const Shop = ({user, setUser}) => {
     function scroll(){
         document.body.style.overflow="hidden";
     }
-    let totalItems = 0;
-    for (const items of cart) {
-        totalItems += items.quantity;
-    }
+
+    // function randNum(min, max){
+    //     const timerNum = Math.floor(Math.random() * (min - max + 1)) + min;
+    //     return timerNum;
+    // } randNum(10000, 10000000)
+
 
 return (
     <div>
         {!user && <Navigate to="/" />}
+
     <div>
         <Nav />
     </div>
@@ -107,9 +105,11 @@ return (
     <div className="backgroundShop"> 
     <BigBox>
         
-        <CartModal {... {cart, addItem, removeItem, showCartModal, toggleCartModal}} />
+        <CartModal {... {cart, addItem, removeItem, showCartModal, toggleCartModal,}} />
         
+        <div className="right">
         <BassketButton onClick={() => {openButton(); scroll()}}><BsCart4 />{cart.reduce((accum,item) => accum + item.qty, 0)}</BassketButton>
+        </div>
 
         <div>
             {items.map((item) =>{
@@ -120,11 +120,11 @@ return (
                         <ListingImg src={item.image} alt = "Book Cover" />
             
                         <div className='column moveOverL'>
-                        <ListingTitle>{item.name}</ListingTitle>
-                        <ListingCategory>Category: {item.cate}</ListingCategory>
+                        <ListingTitle>{item.title}</ListingTitle>
+                        <ListingCategory>Category: {item.category}</ListingCategory>
                         <ListingCategory>Condition: [brand new]</ListingCategory>
-                        <ListingDescription>{item.des}</ListingDescription>
-                        <ListingTimer>Time left: <Countdown date={Date.now() + 10000} /></ListingTimer>
+                        <ListingDescription>{item.description}</ListingDescription>
+                        <ListingTimer>Time left: <Countdown date={Date.now() + 100000000} /></ListingTimer>
                         </div>
 
 
@@ -132,9 +132,9 @@ return (
                         
                         <BidButton/>
 
-                        <p>Buy it now: {item.buy}</p>
-                        <button className="addToCart" onClick={() => addItem(item)}
-                        >Add to Cart</button> 
+                        <BuyText>Buy it now: £{item.price}</BuyText>
+                        <AddToCartBTN className="addToCart" onClick={() => addItem(item)}
+                        >Add to Cart</AddToCartBTN> 
                         </div>
                     </ListingContainer>
                     </ListingBox>
@@ -145,6 +145,7 @@ return (
 
 
     </BigBox>
+    <Footer />
     </div>
     </div>
 );

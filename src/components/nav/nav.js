@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import React from "react";
 import { Wrapper, NavbarItems, Logo, } from "./nav.styled";
 import "./nav.css";
 import logo from "../images/logomockupblank.png";
+
 
 
 
@@ -9,6 +11,7 @@ const Nav = () => {
 
 
     return (
+
     <Wrapper className="sizing">
         <Logo src={logo} />
         <Link className="navBarLinks" to="/"><NavbarItems>Home</NavbarItems></Link>
@@ -20,3 +23,4 @@ const Nav = () => {
 };
 
 export default Nav;
+

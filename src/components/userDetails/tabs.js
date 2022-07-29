@@ -6,8 +6,12 @@ import {
 	InputProfile,
 	UpdateBtn,
 	DeleteBtn,
+	AddressInputProfile,
+	TabBtn,
 } from "./tabs.styled";
 import "./tabs.css";
+
+
 
 function Tabs({ user, setter }) {
 	const [toggleState, setToggleState] = useState(1);
@@ -64,33 +68,33 @@ function Tabs({ user, setter }) {
 	return (
 		<div className="tabContainer">
 			<div className="bloc-tabs">
-				<button
+				<TabBtn
 					className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
 					onClick={() => toggleTab(1)}
 				>
 					Update
-				</button>
+				</TabBtn>
 
-				<button
+				<TabBtn
 					className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
 					onClick={() => toggleTab(2)}
 				>
 					Rating
-				</button>
+				</TabBtn>
 
-				<button
+				<TabBtn
 					className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
 					onClick={() => toggleTab(3)}
 				>
 					Bidding History
-				</button>
+				</TabBtn>
 
-				<button
+				<TabBtn
 					className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
 					onClick={() => toggleTab(4)}
 				>
 					Your Shop
-				</button>
+				</TabBtn>
 			</div>
 
 			<div className="content-tabs">
@@ -129,17 +133,17 @@ function Tabs({ user, setter }) {
 
 							<div className="formSpaces" />
 							<div className="row">
-								<InputProfile
+								<AddressInputProfile
 									onChange={(e) => setStreet(e.target.value)}
 									placeholder="First Line of Address"
 								/>
 
-								<InputProfile
+								<AddressInputProfile
 									onChange={(e) => setCity(e.target.value)}
 									placeholder="City"
 								/>
 
-								<InputProfile
+								<AddressInputProfile
 									onChange={(e) => setPostcode(e.target.value)}
 									placeholder="Postcode"
 								/>
@@ -148,7 +152,7 @@ function Tabs({ user, setter }) {
 							<div className="formSpaces" />
 							<div className="row">
 								<UpdateBtn type="submit">Update</UpdateBtn>
-
+							
 								<DeleteBtn onClick={() => deleteFetch(setter)}>
 									Delete Account
 								</DeleteBtn>
@@ -162,6 +166,9 @@ function Tabs({ user, setter }) {
 				>
 					<ProfileUpdateTitle>Your rating is:</ProfileUpdateTitle>
 					<p>⭐⭐⭐⭐⭐ 100%</p>
+					<br/>
+					<br/>
+					<br/>
 				</div>
 
 				<div
@@ -170,6 +177,7 @@ function Tabs({ user, setter }) {
 					<ProfileUpdateTitle>Your bidding history:</ProfileUpdateTitle>
 					<p>View successful bids</p>
 					<p>View unsucessful bids</p>
+					<br/>
 				</div>
 
 				<div
@@ -177,6 +185,9 @@ function Tabs({ user, setter }) {
 				>
 					<ProfileUpdateTitle>Your Shop:</ProfileUpdateTitle>
 					<p>Your items </p>
+					<br/>
+					<br/>
+					<br/>
 				</div>
 			</div>
 		</div>

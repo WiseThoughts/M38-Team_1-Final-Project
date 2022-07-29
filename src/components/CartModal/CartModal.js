@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import { CartBackground, CartBody, CartHeader, CartModalButton, CartModalButtonWrapper, CartWrapper, CartMap, CartMapOutline } from './CartModalStyling'
+
+import { CartBackground, CartBody, CartHeader, CartModalButton, CartModalButtonWrapper, CartWrapper, CartMap, CartMapOutline, ButtonLayout, AddBtn, MinusBtn, QTY, MaodalImage, Center } from './CartModalStyling'
 import {GiBasket} from "react-icons/gi"
-import Shop from '../../pages/shop/shop'
+
 
 
 
@@ -15,6 +15,8 @@ const CartModal = ({cart, addItem, removeItem, showCartModal, toggleCartModal, }
   function scroll(){
     document.body.style.overflow="";
   }
+
+
 
   return showCartModal ? (
     <div>
@@ -30,23 +32,29 @@ const CartModal = ({cart, addItem, removeItem, showCartModal, toggleCartModal, }
                 { cart.map( ( item ) => (
                 <div key={item.id} >
                 <CartMap >
-                <h3>{ item.name }</h3>
-                <div>Sub-total: {(parseInt(item.price*item.qty))}</div>
-                <button className="addButton"
+                <Center >
+                <h3>{ item.title }</h3>
+                <MaodalImage src={item.image} alt = "item img" />
+                <div>Sub-total: £{(parseInt(item.price*item.qty))}</div>
+                </Center>
+                <ButtonLayout>
+                <AddBtn className="addButton"
                 onClick={()=> addItem(item)}>
                 +
-                </button>
-                <p className="qty">{item.qty}</p>
-                <button className="removeButton"
+                </AddBtn>
+                <QTY className="qty">{item.qty}</QTY>
+                <MinusBtn className="removeButton"
                 onClick={()=> removeItem(item) }>
                 -
-                </button>
+                </MinusBtn>
+                </ButtonLayout>
                 </CartMap>
                 </div>))}
                 </CartMapOutline>
                 </CartBody>
 
                 <CartModalButtonWrapper>
+                  
                     <CartModalButton>Check Out</CartModalButton>
                     <CartModalButton onClick={()=>{ closeButton(); scroll() }}>Cancel</CartModalButton>
                 </CartModalButtonWrapper>

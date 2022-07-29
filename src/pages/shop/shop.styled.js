@@ -14,14 +14,11 @@ export const BigBox = styled.div`
 export const BassketButton = styled.button`
     width: fit-content;
     height: fit-content;
-    border: 10px double black;
+    border: 10px double white;
     font-size: 25px;
     padding: 5px;
-    background: orange;
-    &::-webkit-scrollbar {
-        top: 0;
-        transition: 3s;
-    }
+    background: black;
+    color: white;
 `
 
 export const ListingBox = styled.div`
@@ -34,12 +31,16 @@ export const ListingContainer = styled.div`
     display: flex;
     flex-direction: row;
     border: 4px solid black;
+    border-radius: 10px;
     width: 1300px;
+    max-height: 400px;
 `
 
 export const ListingImg = styled.img`
-    outline: 3px dotted red;
+    border-radius: 10px;
     height: 400px;
+    width: 400px;
+    background-size: contain;
 `
 
 export const ListingTitle = styled.h2`
@@ -57,14 +58,21 @@ export const ListingCategory = styled.p`
 export const ListingDescription = styled.p`
     colour: black;
     font-size: 20px;
-    width: 400px;
-    margin-right: 100px;
+    width: 600px;
+    height: 150px;
+    margin-right: 50px;
 `
 
 export const ListingTimer = styled.p`
     font-size: 25px;
-    border: 2px dotted black;
+    border: 2px dotted red;
     background-color: whitesmoke;
     padding: 5px;
     width: fit-content;
+`
+
+
+export const BuyText = styled.p`
+    font-size: 20px;
+    font-weight: 600;
 `
