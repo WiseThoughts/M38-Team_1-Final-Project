@@ -1,5 +1,6 @@
 import { createListing } from "../../utils";
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 import { InputListing, ListingOuter, ListingForm, BigBox, ListingTitle, } from "./listing.styled.js"
 import Nav from "../nav/nav";
 import ListingModal from "../ListingModal/ListingModal";
@@ -25,11 +26,11 @@ const Listing = (ListObj, setter, user, ) => {
 
   return (
 
-    <div>
+    <div>{!user && <Navigate to="/" />}
 
     <div><Nav /></div>
 
-    <div className="backgroundShop">
+    <div className="backgroundListing">
       <BigBox >
     <div>
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ListingBackground, ListingBody, ListingButton, ListingButtonWrapper, ListingHeader, ListingMapWrap, ListingWrapper, ListingBox, ListingContainer, ListingCategory, ListingDescription, ListingTimer, ListingTitle, ListingImg, BidButtons, BidButtonBox } from './listingMoadal.styling'
+import { ListingBackground, ListingBody, ListingButton, ListingButtonWrapper, ListingHeader, ListingMapWrap, ListingWrapper, ListingBox, ListingContainer, ListingCategory, ListingDescription, ListingTimer, ListingTitle, ListingImg, BidButtons, BidButtonBox, AddToCartBTN } from './listingMoadal.styling'
 import Countdown from 'react-countdown';
 import Logo from "../images/wisethoughts purple-yellow.png";
 
@@ -60,8 +60,8 @@ const ListingModal = ({showListingModal, toggleListingModal, name, buyNowPrice, 
                                 </BidButtonBox>
 
                                 <p>Buy it now: £{buyNowPrice}</p>
-                                <button
-                                >Add to Cart</button> 
+                                <AddToCartBTN
+                                >Add to Cart</AddToCartBTN> 
                                 </div>
                             </ListingContainer>
                             </ListingBox>

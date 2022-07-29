@@ -9,10 +9,6 @@ import logo from "../images/logomockupblank.png";
 
 const Nav = () => {
 
-    const logout =()=>{
-        localStorage.removeItem("myToken");
-        <Link to="/" />
-    }
 
     return (
 
@@ -22,9 +18,6 @@ const Nav = () => {
         <Link className="navBarLinks" to="/profile"><NavbarItems>Profile</NavbarItems></Link>
         <Link className="navBarLinks" to="/shop"><NavbarItems>Shop</NavbarItems></Link>
         <Link className="navBarLinks" to="/listing"><NavbarItems>Listing</NavbarItems></Link>
-        <div>
-            <button onClick={logout()}>Log out</button>
-        </div>
     </Wrapper>
 );
 };

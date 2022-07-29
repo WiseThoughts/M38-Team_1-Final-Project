@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { BidButtons } from "./ListingModal/listingMoadal.styling";
+import { BidButtons, BidButtonBox } from "./ListingModal/listingMoadal.styling";
 
 const BidButton = () => {
  const [currentBid, setCurrentBid] = useState(0)
@@ -19,10 +19,11 @@ const bidClicker3 = () => {
 
         <div><p>Bid Price: £{currentBid}</p></div>
         <br></br>
-        <BidButton onClick = {bidClicker1}>+ £1</BidButton>
-        <BidButton onClick = {bidClicker2}>+ £5</BidButton>
-        <BidButton onClick = {bidClicker3}>+ £50</BidButton>
-        
+        <BidButtonBox>
+        <BidButtons onClick = {bidClicker1}>+ £1</BidButtons>
+        <BidButtons onClick = {bidClicker2}>+ £5</BidButtons>
+        <BidButtons onClick = {bidClicker3}>+ £50</BidButtons>
+        </BidButtonBox>
 
     </div>
 }

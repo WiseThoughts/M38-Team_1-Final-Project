@@ -139,4 +139,19 @@ export const BidButtons = styled.button`
     border: 2px solid black;
     border-radius: 7px;
     font-size: 15px;
+    &:hover{
+      border: 2px solid red
+    }
+`
+
+export const AddToCartBTN = styled.button`
+    width: 160px;
+    height: 45px;
+    padding: 3px;
+    border: 2px solid black;
+    border-radius: 7px;
+    font-size: 25px;
+    &:hover{
+      border: 2px solid red
+    }
 `

@@ -9,10 +9,11 @@ import CartModal from "../../components/CartModal/CartModal";
 import "./shop.css"
 import Footer from "../../components/Footer/footer";
 import BidButton from "../../components/BidButton";
+import { AddToCartBTN } from "../../components/ListingModal/listingMoadal.styling";
 
 
 
-const Shop = () => {
+const Shop = (user, setuser) => {
 
     const [ setError] = useState()
     const [items, setItems] = useState([])
@@ -49,7 +50,7 @@ const Shop = () => {
             items.name = faker.commerce.productName();
             items.des = faker.commerce.productDescription(20);
             items.cate = faker.commerce.productAdjective(1);
-            items.image = faker.image.business()
+            items.pic = faker.image.business()
             return items;
             });
         setItems(itemData);
@@ -88,13 +89,11 @@ const Shop = () => {
     function scroll(){
         document.body.style.overflow="hidden";
     }
-    // let totalItems = 0;
-    // for (const items of cart) {
-    //     totalItems += items.quantity;
-    // }
+
 
 return (
     <div>
+        {!user && <Navigate to="/" />}
 
     <div>
         <Nav />
@@ -130,8 +129,8 @@ return (
                         <BidButton/>
 
                         <p>Buy it now: {item.buy}</p>
-                        <button className="addToCart" onClick={() => addItem(item)}
-                        >Add to Cart</button> 
+                        <AddToCartBTN className="addToCart" onClick={() => addItem(item)}
+                        >Add to Cart</AddToCartBTN> 
                         </div>
                     </ListingContainer>
                     </ListingBox>
