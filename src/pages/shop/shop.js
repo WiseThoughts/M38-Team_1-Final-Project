@@ -21,11 +21,12 @@ const Shop = () => {
 
 
 // api with products here  
+//back up api link https://api.thecatapi.com/v1/images/search?limit=10   https://fakestoreapi.com/products
 
     const fetchImages = async () => {
         try {
         const response = await fetch(
-            "https://api.thecatapi.com/v1/images/search?limit=10"
+            "https://fakestoreapi.com/products"
         );
         if (!response.ok) {
             throw new Error(response.statusText);
@@ -43,12 +44,12 @@ const Shop = () => {
         let itemData = await fetchImages();
         itemData = itemData.map((items) => {
             items.id = faker.random.alphaNumeric(20)
-            items.name = faker.commerce.productName()
-            items.image = faker.image.technics()
             items.bid = faker.commerce.price(100, 500, 0, "£");
             items.buy = faker.commerce.price(100, 500, 0, "£");
-            items.des = faker.commerce.productDescription(20)
-            items.cate = faker.commerce.productAdjective(1)
+            items.name = faker.commerce.productName();
+            items.des = faker.commerce.productDescription(20);
+            items.cate = faker.commerce.productAdjective(1);
+            items.image = faker.image.business()
             return items;
             });
         setItems(itemData);
@@ -87,10 +88,10 @@ const Shop = () => {
     function scroll(){
         document.body.style.overflow="hidden";
     }
-    let totalItems = 0;
-    for (const items of cart) {
-        totalItems += items.quantity;
-    }
+    // let totalItems = 0;
+    // for (const items of cart) {
+    //     totalItems += items.quantity;
+    // }
 
 return (
     <div>
@@ -116,10 +117,10 @@ return (
                         <ListingImg src={item.image} alt = "Book Cover" />
             
                         <div className='column moveOverL'>
-                        <ListingTitle>{item.name}</ListingTitle>
-                        <ListingCategory>Category: {item.cate}</ListingCategory>
+                        <ListingTitle>{item.title}</ListingTitle>
+                        <ListingCategory>Category: {item.category}</ListingCategory>
                         <ListingCategory>Condition: [brand new]</ListingCategory>
-                        <ListingDescription>{item.des}</ListingDescription>
+                        <ListingDescription>{item.description}</ListingDescription>
                         <ListingTimer>Time left: <Countdown date={Date.now() + 10000} /></ListingTimer>
                         </div>
 

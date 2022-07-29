@@ -26,6 +26,25 @@ export const InputProfile = styled.input`
     background: #37474f;
     border: 2px solid white;
     border-radius: 5px;
+    width: 380px;
+    &:hover {
+        background: white;
+        border: 2px solid red;
+        color: black;
+        ::-webkit-input-placeholder {color: rgba(0,0,0,0.7);} 
+        ::-moz-placeholder { color: rgba(0,0,0,0.7);} 
+        :-ms-input-placeholder { color: rgba(0,0,0,0.7);} 
+        :-moz-placeholder {color: rgba(0,0,0,0.7);} 
+    }
+`;
+export const AddressInputProfile = styled.input`
+    padding:3px;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    background: #37474f;
+    border: 2px solid white;
+    border-radius: 5px;
     width: 250px;
     &:hover {
         background: white;
@@ -45,6 +64,7 @@ export const DeleteBtn = styled.button`
     width: 50%;
     height: 40px;
     border: 2px solid white;
+    border-radius: 5px;
     &:hover {
         cursor: pointer;
         background: white;
@@ -60,6 +80,7 @@ export const UpdateBtn = styled.button`
     width: 50%;
     height: 40px;
     border: 2px solid white;
+    border-radius: 5px;
     &:hover {
         cursor: pointer;
         background: white;

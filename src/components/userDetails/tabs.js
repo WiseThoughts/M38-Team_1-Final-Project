@@ -6,6 +6,7 @@ import {
 	InputProfile,
 	UpdateBtn,
 	DeleteBtn,
+	AddressInputProfile,
 } from "./tabs.styled";
 import "./tabs.css";
 
@@ -131,17 +132,17 @@ function Tabs({ user, setter }) {
 
 							<div className="formSpaces" />
 							<div className="row">
-								<InputProfile
+								<AddressInputProfile
 									onChange={(e) => setStreet(e.target.value)}
 									placeholder="First Line of Address"
 								/>
 
-								<InputProfile
+								<AddressInputProfile
 									onChange={(e) => setCity(e.target.value)}
 									placeholder="City"
 								/>
 
-								<InputProfile
+								<AddressInputProfile
 									onChange={(e) => setPostcode(e.target.value)}
 									placeholder="Postcode"
 								/>
@@ -164,6 +165,9 @@ function Tabs({ user, setter }) {
 				>
 					<ProfileUpdateTitle>Your rating is:</ProfileUpdateTitle>
 					<p>⭐⭐⭐⭐⭐ 100%</p>
+					<br/>
+					<br/>
+					<br/>
 				</div>
 
 				<div
@@ -172,6 +176,7 @@ function Tabs({ user, setter }) {
 					<ProfileUpdateTitle>Your bidding history:</ProfileUpdateTitle>
 					<p>View successful bids</p>
 					<p>View unsucessful bids</p>
+					<br/>
 				</div>
 
 				<div
@@ -179,6 +184,9 @@ function Tabs({ user, setter }) {
 				>
 					<ProfileUpdateTitle>Your Shop:</ProfileUpdateTitle>
 					<p>Your items </p>
+					<br/>
+					<br/>
+					<br/>
 				</div>
 			</div>
 		</div>
