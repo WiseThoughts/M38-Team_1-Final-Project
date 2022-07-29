@@ -4,6 +4,7 @@ import Countdown from 'react-countdown';
 import Logo from "../images/wisethoughts purple-yellow.png";
 
 
+
 const ListingModal = ({showListingModal, toggleListingModal, name, buyNowPrice, category, condition, description}) => {
 
     const [currentBid, setCurrentBid] = useState(0)
@@ -29,6 +30,8 @@ const ListingModal = ({showListingModal, toggleListingModal, name, buyNowPrice, 
     <div>
         <ListingBackground />
         <ListingWrapper>
+
+
             <ListingHeader>For Sale</ListingHeader>
             <ListingBody>
             <ListingMapWrap>

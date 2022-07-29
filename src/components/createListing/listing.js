@@ -1,11 +1,13 @@
 import { createListing } from "../../utils";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
-import { InputListing, ListingOuter, ListingForm, BigBox, ListingTitle, } from "./listing.styled.js"
+import { InputListing, ListingOuter, ListingForm, BigBox, ListingTitle, ModalButton } from "./listing.styled.js"
 import Nav from "../nav/nav";
 import ListingModal from "../ListingModal/ListingModal";
 import "./listing.css"
 import Footer from "../Footer/footer";
+import {BsShopWindow} from 'react-icons/bs';
+
 
 const Listing = (ListObj, setter, user, ) => {
   const [name, setName] = useState();
@@ -26,7 +28,8 @@ const Listing = (ListObj, setter, user, ) => {
 
   return (
 
-    <div>{!user && <Navigate to="/" />}
+    <div> 
+
 
     <div><Nav /></div>
 
@@ -34,11 +37,15 @@ const Listing = (ListObj, setter, user, ) => {
       <BigBox >
     <div>
 
+    <div>
       <ListingModal {...{showListingModal, toggleListingModal, name, buyNowPrice, category, condition, description}} />
-
+      <ModalButton onClick={()=>{toggleListingModal(true); scroll()}}><BsShopWindow/> Edit Listings</ModalButton>
     </div>
-      <ListingTitle>{user}</ListingTitle>
+    </div>
+
+    <div>
       <ListingTitle>Create Your Listing Here:</ListingTitle>
+    </div>
 
       <ListingOuter >
       <ListingForm onSubmit={submitListing}>
@@ -67,7 +74,7 @@ const Listing = (ListObj, setter, user, ) => {
           placeholder="Description"
         />
         <div className="breaker" />
-        <button onClick={() => {submitListing(); toggleListingModal(true); scroll()}}>Create Listing</button>
+        <ModalButton onClick={() => {submitListing(); toggleListingModal(true); scroll()}}>Create Listing</ModalButton>
       </ListingForm>
       </ListingOuter>
       </BigBox>

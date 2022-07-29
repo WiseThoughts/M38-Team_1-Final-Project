@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import {BsCart4} from 'react-icons/bs'
 import { faker } from "@faker-js/faker";
 import { Navigate } from "react-router-dom";
-import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer } from "./shop.styled"
+import { BassketButton, BigBox, ListingContainer, ListingBox, ListingImg, ListingTitle, ListingCategory, ListingDescription, ListingTimer, BuyText } from "./shop.styled"
 import Countdown from 'react-countdown';
 import CartModal from "../../components/CartModal/CartModal";
 import "./shop.css"
@@ -45,12 +45,11 @@ const Shop = (user, setuser) => {
         let itemData = await fetchImages();
         itemData = itemData.map((items) => {
             items.id = faker.random.alphaNumeric(20)
-            items.bid = faker.commerce.price(100, 500, 0, "£");
-            items.buy = faker.commerce.price(100, 500, 0, "£");
-            items.name = faker.commerce.productName();
-            items.des = faker.commerce.productDescription(20);
-            items.cate = faker.commerce.productAdjective(1);
-            items.pic = faker.image.business()
+            // items.buy = faker.commerce.price(100, 500, 0, "£");
+            // items.name = faker.commerce.productName();
+            // items.des = faker.commerce.productDescription(20);
+            // items.cate = faker.commerce.productAdjective(1);
+            // items.pic = faker.image.business()
             return items;
             });
         setItems(itemData);
@@ -90,6 +89,11 @@ const Shop = (user, setuser) => {
         document.body.style.overflow="hidden";
     }
 
+    // function randNum(min, max){
+    //     const timerNum = Math.floor(Math.random() * (min - max + 1)) + min;
+    //     return timerNum;
+    // } randNum(10000, 10000000)
+
 
 return (
     <div>
@@ -103,9 +107,11 @@ return (
     <div className="backgroundShop"> 
     <BigBox>
         
-        <CartModal {... {cart, addItem, removeItem, showCartModal, toggleCartModal}} />
+        <CartModal {... {cart, addItem, removeItem, showCartModal, toggleCartModal,}} />
         
+        <div className="right">
         <BassketButton onClick={() => {openButton(); scroll()}}><BsCart4 />{cart.reduce((accum,item) => accum + item.qty, 0)}</BassketButton>
+        </div>
 
         <div>
             {items.map((item) =>{
@@ -120,7 +126,7 @@ return (
                         <ListingCategory>Category: {item.category}</ListingCategory>
                         <ListingCategory>Condition: [brand new]</ListingCategory>
                         <ListingDescription>{item.description}</ListingDescription>
-                        <ListingTimer>Time left: <Countdown date={Date.now() + 10000} /></ListingTimer>
+                        <ListingTimer>Time left: <Countdown date={Date.now() + 100000000} /></ListingTimer>
                         </div>
 
 
@@ -128,7 +134,7 @@ return (
                         
                         <BidButton/>
 
-                        <p>Buy it now: {item.buy}</p>
+                        <BuyText>Buy it now: £{item.price}</BuyText>
                         <AddToCartBTN className="addToCart" onClick={() => addItem(item)}
                         >Add to Cart</AddToCartBTN> 
                         </div>

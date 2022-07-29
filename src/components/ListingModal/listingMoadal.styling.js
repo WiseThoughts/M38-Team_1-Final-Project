@@ -73,7 +73,6 @@ export const ListingMapWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-
   flex-wrap: wrap;
 
 `
@@ -132,6 +131,12 @@ export const BidButtonBox = styled.div`
     flex-direction: row;
 `
 
+export const BidButtonAlign = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+`
+
 export const BidButtons = styled.button`
     width: 60px;
     height: 35px;
@@ -142,6 +147,12 @@ export const BidButtons = styled.button`
     &:hover{
       border: 2px solid red
     }
+`
+export const BidPrice = styled.p`
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
 `
 
 export const AddToCartBTN = styled.button`

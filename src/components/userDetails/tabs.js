@@ -7,6 +7,7 @@ import {
 	UpdateBtn,
 	DeleteBtn,
 	AddressInputProfile,
+	TabBtn,
 } from "./tabs.styled";
 import "./tabs.css";
 
@@ -67,33 +68,33 @@ function Tabs({ user, setter }) {
 	return (
 		<div className="tabContainer">
 			<div className="bloc-tabs">
-				<button
+				<TabBtn
 					className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
 					onClick={() => toggleTab(1)}
 				>
 					Update
-				</button>
+				</TabBtn>
 
-				<button
+				<TabBtn
 					className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
 					onClick={() => toggleTab(2)}
 				>
 					Rating
-				</button>
+				</TabBtn>
 
-				<button
+				<TabBtn
 					className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
 					onClick={() => toggleTab(3)}
 				>
 					Bidding History
-				</button>
+				</TabBtn>
 
-				<button
+				<TabBtn
 					className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
 					onClick={() => toggleTab(4)}
 				>
 					Your Shop
-				</button>
+				</TabBtn>
 			</div>
 
 			<div className="content-tabs">

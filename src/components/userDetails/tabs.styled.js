@@ -88,3 +88,8 @@ export const UpdateBtn = styled.button`
         border: 2px solid red;
     }
 `
+
+export const TabBtn = styled.button`
+    font-weight: 600;
+    font-size: 20px;
+`
