@@ -1,5 +1,6 @@
 
 import {} from "./about.styled.js"
+import { Navigate } from "react-router-dom";
 import './about.css';
 import Nav from "../../components/nav/nav.js";
 import Moon from "../../components/images/moon.png";
@@ -19,7 +20,7 @@ import { useEffect, useState } from "react";
 //{visible && <div id="hide"><img className="joshGalaxy" src={Galaxy} alt="spining galaxy" /></div>}
 
 
-function About() {
+function About({user, setUser}) {
 
 const [height, setHeight] = useState(0);
 
@@ -29,6 +30,7 @@ const [height, setHeight] = useState(0);
 
     return (
     <div>
+        {!user && <Navigate to="/" />}
         <div className="sizing">
             <Nav /> 
         </div>

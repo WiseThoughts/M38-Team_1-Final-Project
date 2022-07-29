@@ -12,9 +12,7 @@ import BidButton from "../../components/BidButton";
 import { AddToCartBTN } from "../../components/ListingModal/listingMoadal.styling";
 
 
-
-const Shop = (user, setuser) => {
-
+const Shop = ({user, setUser}) => {
     const [ setError] = useState()
     const [items, setItems] = useState([])
     const [cart, setCart] = useState([])

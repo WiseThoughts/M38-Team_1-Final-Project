@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { faker } from "@faker-js/faker";
 import Login from "../../components/login/login";
 import Profile from "../profile/profile";
@@ -18,7 +18,7 @@ function App() {
 
   return (
   <div>
-    {/* {!user && <Navigate to="/" />} */}
+     {!user && <Navigate to="/" />} 
     <Routes>
         <Route path="/" element={<Login user={user} setter={setUser} />} />
         <Route path="/profile" element={<Profile user={user} setter={setUser} profilePic={profilePic} />} />
