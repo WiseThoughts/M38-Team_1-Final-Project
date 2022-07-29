@@ -11,7 +11,7 @@ const BidButton = () => {
     const bidClicker2 = () => {
         setCurrentBid(currentBid+5)
     }
-const bidClicker3 = () => {
+    const bidClicker3 = () => {
         setCurrentBid(currentBid+50)
     }
 
@@ -19,7 +19,6 @@ const bidClicker3 = () => {
 
         <BidButtonAlign >
         <BidPrice>Bid Price: £{currentBid}</BidPrice>
-        <br></br>
         <BidButtonBox>
         <BidButtons onClick = {bidClicker1}>+ £1</BidButtons>
         <BidButtons onClick = {bidClicker2}>+ £5</BidButtons>

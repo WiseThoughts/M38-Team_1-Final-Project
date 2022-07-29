@@ -93,7 +93,7 @@ export const ListingDescription = styled.p`
 
 export const ListingTimer = styled.p`
   font-size: 25px;
-  border: 2px dotted black;
+  border: 2px dotted red;
   background-color: whitesmoke;
   padding: 5px;
   width: fit-content;
@@ -108,10 +108,10 @@ export const ListingContainer = styled.div`
 `
 
 export const ListingImg = styled.img`
-    outline: 3px dotted red;
     height: 300px;
     width: 400px;
     background-size: contain;
+    border-radius: 5px;
 `
 
 export const ListingBox = styled.div`
@@ -165,4 +165,9 @@ export const AddToCartBTN = styled.button`
     &:hover{
       border: 2px solid red
     }
+`
+
+export const BuyText = styled.p`
+    font-size: 20px;
+    font-weight: 600;
 `

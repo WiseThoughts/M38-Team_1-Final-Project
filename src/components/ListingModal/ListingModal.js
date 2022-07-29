@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ListingBackground, ListingBody, ListingButton, ListingButtonWrapper, ListingHeader, ListingMapWrap, ListingWrapper, ListingBox, ListingContainer, ListingCategory, ListingDescription, ListingTimer, ListingTitle, ListingImg, BidButtons, BidButtonBox, AddToCartBTN } from './listingMoadal.styling'
+import { ListingBackground, ListingBody, ListingButton, ListingButtonWrapper, ListingHeader, ListingMapWrap, ListingWrapper, ListingBox, ListingContainer, ListingCategory, ListingDescription, ListingTimer, ListingTitle, ListingImg, BidButtons, BidButtonBox, AddToCartBTN, BuyText, BidPrice } from './listingMoadal.styling'
 import Countdown from 'react-countdown';
 import Logo from "../images/wisethoughts purple-yellow.png";
 
@@ -54,15 +54,14 @@ const ListingModal = ({showListingModal, toggleListingModal, name, buyNowPrice, 
 
                                 <div className='column postionEnd moveOverR'>
                                 
-                                <div><p>Bid Price: £{currentBid}</p></div>
-                                <br></br>
+                                <BidPrice>Bid Price: £{currentBid}</BidPrice>
                                 <BidButtonBox>
                                 <BidButtons onClick = {bidClicker1}>+ £1</BidButtons>
                                 <BidButtons onClick = {bidClicker2}>+ £5</BidButtons>
                                 <BidButtons onClick = {bidClicker3}>+ £50</BidButtons>
                                 </BidButtonBox>
 
-                                <p>Buy it now: £{buyNowPrice}</p>
+                                <BuyText>Buy it now: £{buyNowPrice}</BuyText>
                                 <AddToCartBTN
                                 >Add to Cart</AddToCartBTN> 
                                 </div>
