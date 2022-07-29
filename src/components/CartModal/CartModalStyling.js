@@ -65,6 +65,9 @@ export const CartModalButton = styled.button`
     font-weight: bold;
     width: 10rem;
     gap: 10px;
+    &:hover{
+      cursor: pointer;
+    }
 `
 export const CartMapOutline = styled.div`
   display: flex;
