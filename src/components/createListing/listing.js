@@ -36,7 +36,7 @@ const Listing = (ListObj, setter, user, ) => {
       <ListingModal {...{showListingModal, toggleListingModal, name, buyNowPrice, category, condition, description}} />
 
     </div>
-    <ListingTitle>{user}</ListingTitle>
+      <ListingTitle>{user}</ListingTitle>
       <ListingTitle>Create Your Listing Here:</ListingTitle>
 
       <ListingOuter >

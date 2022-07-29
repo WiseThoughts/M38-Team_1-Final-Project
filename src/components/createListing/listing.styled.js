@@ -61,13 +61,3 @@ export const ListingTitle = styled.h3`
 	font-size: 50px;
 	text-decoration: underline;
 `
-
-export const ProfilePic = styled.img`
-    display: flex;
-    justify-items: center;
-    border: 2px solid white;
-    border-radius: 25%;
-    background: black;
-	width: 150px;
-	height: 150px;
-`
